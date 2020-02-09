@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Document</title>
+<style>
+    body {
+    background-color: #dcdde1;
+}
+form {
+  position:absolute;
+  top:10%;
+  left:37%;
+  padding:12px;
+  width: 350px;
+  border-radius:10px;
+  background-color:  #ff6b6b;
+}
+form input{
+  padding:5px;
+  display:block;
+  border-radius:10px;
+  margin: 5px;
+  border-style:none;
+  
+}
+.caixa{
+  width:90%;
+}
+.botao{
+  float:left;
+  margin-left:130px;
+}
+.botao:hover{
+  background-color: green;
+}
+
+</style>
+</head>
+<body>
+<form name="form" action="" method="post" >
+<h2>Cadastro Professores</h2>  
+    <div class="campo">
+        <label for="nome">Nome:</label>
+        <input class="caixa" type="text" name="nome" id="nome">
+    </div>
+    <div class="campo">
+        <label for="snome">Sobrenome:</label>
+        <input class="caixa" type="text" name="snome" id="snome">
+    </div>
+    
+    <div class="email">
+    <label for="email">E-mail:</label>
+            <input class="caixa" type="text" id="email" name="email"  value="" placeholder=>
+    </div>
+    <div class="emails">
+    </div>
+    <div class="campo">
+    <label for="telefone">Telefone:</label>
+            <input class="caixa" type="text" id="telefone" name="telefone" value="">
+    </div>
+    <div class="campo">
+      <label for="pssword">Senha:</label>
+      <input type="password" class="caixa">
+    </div>
+    <div class="campo">
+    <label for="pssword">Confirme a senha:</label>
+      <input type="password" class="caixa">
+      <label for="pssword">Código de cadastro:</label>
+      <input type="password" class="caixa">
+      
+    </div>
+    <input type="button" value="Cadastre-se" class="botao">
+
+</form>
+
+</body>
+</html>

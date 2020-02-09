@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 5% 10%;
+    background-color: #dcdde1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.topo {
+    background-color: #ff6b6b;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 10%;
+    border-radius: 10px;
+}
+
+.logo img {
+    cursor: pointer;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 90%;
+}
+
+.menu {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #b09e80;
+}
+
+.saudacao {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 700;
+    /* text-align: center; */
+    cursor: pointer;
+    margin-right: 0;
+    width: 350px;
+    height: 30px;
+    padding: 0px 0px 60px 0;
+}
+
+.hamburguer {
+    display: none;
+}
+
+.nav_links {
+    padding-left: 20px;
+    display: flex;
+    align-items: baseline;
+}
+
+.nav_links li a {
+    display: flex;
+}
+
+li,
+a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 20px 10px;
+    margin-left: 45px;
+}
+
+.nav_links li:nth-child(3n) {
+    width: 180px;
+}
+
+.nav_links li {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li:hover {
+    color: rgb(116, 196, 161, 1);
+}
+
+/* AGORA É A PARTE DO CALENDARIO!!! */
+main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calendario {
+    width: 715px;
+    height: auto;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    border-radius: 40px;
+}
+
+.calendario .imagem {
+    width: 100%;
+    height: 80px;
+    background: url(./img/study-group.jpg);
+    background-size: cover;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 25px 25px 0 0;
+}
+
+.calendario .imagem h2 {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.calendario .date {
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    grid-gap: 20px;
+    box-sizing: border-box;
+}
+
+.calendario .date div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: #262626;
+}
+
+.calendario .date div.day {
+    font-weight: 700;
+}
+
+.calendario .date div.day:first-child,
+.calendario .date div.number:nth-child(7n + 1) {
+    color: #ff685d;
+    font-weight: 700;
+}
+
+.calendario .date div.number.active,
+.calendario .date div.number:hover {
+    background: #8395a7;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 0.8fr);
+    align-items: start;
+}
+
+.containerBtns {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: right;
+}
+
+.notas {
+    width: 100%;
+    height: 70px;
+    background-color: #8395a7;
+    color: #fff;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.unidades {
+    border-bottom: 0.5px solid #ddd;
+    line-height: 40px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.unidades>select {
+    width: 100%;
+    background: none;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.conjunto_turmas {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.conjunto_turmas>.turma {
+    margin-bottom: 10px;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.conjunto_turmas>.turma:hover {
+    background: #8395a7;
+    color: white;
+}

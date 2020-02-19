@@ -21,8 +21,7 @@ header {
 }
 
 .topo {
-    background-color: #ff6b6b;
-    display: flex;
+    background-color: #8EB6BF;
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
@@ -43,9 +42,9 @@ header {
     padding: 0px 0px;
     margin-right: auto;
     position: absolute;
-    left: 330px;
+    left: 380px;
     top: 125px;
-    color: #8395a7;
+    color: white;
     font-family: "Montserrat", sans-serif;
 
 }
@@ -77,14 +76,20 @@ body {
     padding: 5% 10%;
     background-color: #dcdde1;
 }
+
 .feed {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(12, 1Fr);
     grid-auto-rows: 100px;
-    grid-gap: 16px;
-    margin: 40px 0 40px 0;
+    grid-gap: 16px; */
+    margin: 40px 30px;
 
 }
+
+.feed{
+    display:flex;
+}
+
 .card {
     background-size: cover;
     background-repeat: no-repeat;
@@ -95,11 +100,13 @@ body {
     justify-content: flex-start;
     padding: 20px;
     transition: all .3s ease;
+    margin: auto 10px;
+    height: 300px;
 }
 
 .card:hover {
     cursor: pointer;
-    box-shadow: 10px 30px 18px -8px #ff6b6b;
+    box-shadow: 13px 10px 16px -6px rgba(168, 168, 168, 1);
     transform: scale(1.02);
 }
 
@@ -107,28 +114,30 @@ body {
     background-image: linear-gradient(to bottom,
             rgba(10, 10, 10, 0) 0%,
             rgba(10, 10, 10, 0) 50%,
-            rgba(10, 10, 10, 0.7) 100%), url('/img/matematica.jpg');
+            rgba(10, 10, 10, 0.7) 100%), url('../img/matematica.jpg');
 }
 
 .card:nth-child(2) {
     background-image: linear-gradient(to bottom,
-    rgba(10, 10, 10, 0) 0%,
-    rgba(10, 10, 10, 0) 50%,
-    rgba(10, 10, 10, 0.7) 100%), url('/img/portugues.jpeg');
-}
+            rgba(10, 10, 10, 0) 0%,
+            rgba(10, 10, 10, 0) 50%,
+            rgba(10, 10, 10, 0.7) 100%), url('../img/portugues.jpg');
+} 
 
 .card:nth-child(3) {
     background-image: linear-gradient(to bottom,
-    rgba(10, 10, 10, 0) 0%,
-    rgba(10, 10, 10, 0) 50%,
-    rgba(10, 10, 10, 0.7) 100%), url('/img/fisica.jpeg');
+            rgba(10, 10, 10, 0) 0%,
+            rgba(10, 10, 10, 0) 50%,
+            rgba(10, 10, 10, 0.7) 100%), url('../img/fisica.jpeg');
 }
+
 .card:nth-child(1),
 :nth-child(2),
-:nth-child(3){
+:nth-child(3) {
     grid-column-start: span 4;
 }
-.descricao{
+
+.descricao {
     display: grid;
     grid-template-columns: repeat(12, 1Fr);
     grid-auto-rows: 100px;
@@ -137,7 +146,7 @@ body {
     align-items: center;
 }
 
-.texto{
+.texto {
     text-align: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -161,15 +170,15 @@ body {
 .bola {
     align-items: center;
     justify-content: space-between;
-    background-color: #ff6b6b;
+    background-color: #8EB6BF;
     border-radius: 30%;
-    box-shadow: 0 5px 15px -5px black;
+    box-shadow: 13px 10px 16px -6px rgba(168, 168, 168, 1);
     width: 90px;
     height: 90px;
     margin: 10px;
     margin: 40px;
     display: inline-block;
-    color:#dcdde1;
+    color: #dcdde1;
     overflow: hidden;
     position: relative;
 }
@@ -221,17 +230,147 @@ body {
 }
 
 @media screen and (max-width:1200px) {
-    .card:nth-child(n) {
+    /* .card:nth-child(n) {
         -ms-grid-column: span 6;
         grid-column-start: span 6;
 
     }
+
+    .feed {
+        display: grid;
+        grid-template-columns: repeat(18, 1Fr);
+        grid-auto-rows: 100px;
+        grid-gap: 25px;
+        margin: 40px 0 40px 0;
+    } */
+
+    .descricao {
+        display: grid;
+        grid-template-columns: repeat(12, 1Fr);
+        grid-auto-rows: 100px;
+        grid-gap: 0px;
+        margin: 50px 0 25px 0;
+        align-items: center;
+    }
+
+    .titulo {
+        margin-left: 25px;
+    }
+
+    .feed {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feed--card--container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        height: 200px;
+        margin-bottom: 30px;
+    }
 }
 
-@media screen and (max-width:800px) {
-    .card:nth-child(n) {
+@media screen and (max-width:900px) {
+    /* .card:nth-child(n) {
         -ms-grid-column: span 12;
         grid-column-start: span 12;
 
+    } */
+
+    .feed {
+        display: grid;
+        grid-template-columns: repeat(8, 1Fr);
+        grid-auto-rows: 100px;
+        grid-gap: 16px;
+        margin: 40px 0 40px 0;
+    }
+
+    .bola {
+        width: 50px;
+        height: 45px;
+        margin: 5px;
+        margin: 20px;
+    }
+
+    .bola>p {
+        line-height: 40px;
+    }
+
+    .texto {
+        padding: 8px;
+    }
+
+    .topo {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .feed {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feed--card--container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        height: 200px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .feed {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feed--card--container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        height: 200px;
+        margin-bottom: 30px;
+    }
+
+    /* .card:nth-child(n) {
+        -ms-grid-column: span 18;
+        grid-column-start: span 18;
+
+    } */
+    .descricao {
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: 80px;
+        grid-gap: 4px;
+        margin: 25px 0 15px 0;
+        align-items: center;
+    }
+
+    .bola {
+        width: 40px;
+        height: 45px;
+        margin: 5px;
+        margin: 20px;
+    }
+
+    .titulo {
+        display: inline-block;
+        padding: 0px 0px;
+        margin-right: auto;
+        position: absolute;
+        left: 205px;
+        top: 110px;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
     }
 }

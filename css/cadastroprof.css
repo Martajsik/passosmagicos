@@ -1,0 +1,30 @@
+body {
+    background-color: #dcdde1;
+}
+form {
+  position:absolute;
+  top:10%;
+  left:37%;
+  padding:12px;
+  width: 350px;
+  border-radius:10px;
+  background-color:  #ff6b6b;
+}
+form input{
+  padding:5px;
+  display:block;
+  border-radius:10px;
+  margin: 5px;
+  border-style:none;
+  
+}
+.caixa{
+  width:90%;
+}
+.botao{
+  float:left;
+  margin-left:130px;
+}
+.botao:hover{
+  background-color: green;
+}

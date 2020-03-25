@@ -12,11 +12,11 @@
 <body>
 
     <form class="box" action="index.html" method="POST">
-         <h1>login</h1>
-         <input class="nome" type="text" name="" placeholder="nome">
-         <input class="email" type="text" name="" placeholder="email">
-         <input class="senha" type="password" name="" placeholder="senha">
-         <input class="senha" type="password" name="" placeholder="senha">
+         <h1>Cadastro</h1>
+         <input class="nome" type="text" name="name" placeholder="nome">
+         <input class="email" type="text" name="email" placeholder="email">
+         <input class="senha" type="password" name="password" placeholder="senha">
+         <input class="senha" type="password" name="password_confirmed" placeholder="senha">
          <input class="cadastrar" type="submit" name="" value="cadastrar">
     </form>
 

@@ -7,7 +7,7 @@ body{
     font-family: sans-serif;
     background-color:#dcdde1;
     display: flex;
-}   
+}
 h1{
     color: #dcdde1;
     text-transform: uppercase;
@@ -23,7 +23,7 @@ h1{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: #ff6b6b;
+    background: #8EB6BF;
     border-radius: 10px;
     right: 60px;
 }
@@ -89,5 +89,6 @@ h1{
     cursor: pointer;
 }
 .cadastrar:hover{
-    background-color: #edf0f1;
+    background-color: #e7ebec;
+    color:#827F75;
 }

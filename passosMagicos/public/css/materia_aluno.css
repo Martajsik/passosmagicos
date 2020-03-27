@@ -21,7 +21,7 @@ header {
 }
 
 .topo {
-    background-color: #ff6b6b;
+    background-color: #8EB6BF;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,7 +99,7 @@ body {
 
 .card:hover {
     cursor: pointer;
-    box-shadow: 10px 30px 18px -8px #ff6b6b;
+    box-shadow: 10px 30px 18px -8px #8EB6BF;
     transform: scale(1.02);
 }
 
@@ -161,7 +161,7 @@ body {
 .bola {
     align-items: center;
     justify-content: space-between;
-    background-color: #ff6b6b;
+    background-color: #8EB6BF;
     border-radius: 30%;
     box-shadow: 0 5px 15px -5px black;
     width: 90px;

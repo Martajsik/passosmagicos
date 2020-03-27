@@ -15,7 +15,7 @@ header {
 }
 
 .topo {
-    background-color: #ff6b6b;
+    background-color: #8EB6BF;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -114,7 +114,7 @@ body {
 
 .card:hover {
     cursor: pointer;
-    box-shadow: 10px 30px 18px -8px #ff6b6b;
+    box-shadow: 10px 30px 18px -8px #8EB6BF;
     transform: scale(1.02);
 }
 
@@ -173,7 +173,7 @@ body {
 }
 
 footer {
-    background-color: #ff6b6b;
+    background-color: #8EB6BF;
     border-radius: 25px;
     height: 127px;
 }
@@ -195,7 +195,7 @@ footer {
     margin: 10px;
     margin: 10px;
     display: inline-block;
-    color: #ff6b6b;
+    color: #8EB6BF;
     overflow: hidden;
     position: relative;
 }
@@ -216,7 +216,7 @@ footer {
     position: absolute;
     width: 120%;
     height: 120%;
-    background: #ff6b6b;
+    background: #8EB6BF;
     transform: rotate(45deg);
     left: -110%;
     top: 90%;

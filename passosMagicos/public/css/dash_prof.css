@@ -154,7 +154,7 @@ main {
 
 .calendario .date div.day:first-child,
 .calendario .date div.number:nth-child(7n + 1) {
-    color: #ff685d;
+    color: #8EB6BF;
     font-weight: 700;
 }
 

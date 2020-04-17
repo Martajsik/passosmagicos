@@ -66,7 +66,7 @@ class User extends Authenticatable
 
     public function materias()
     {
-        return $this->hasMany(Materia::class,'aluno_materias');
+        return $this->hasMany(Materia::class);
     }
 
 }

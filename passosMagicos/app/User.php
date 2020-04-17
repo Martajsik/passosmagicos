@@ -16,7 +16,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'cpf',
+        'rg', 'tipo'
     ];
 
     /**
@@ -36,4 +37,36 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function aluno_materia_observacao()
+    {
+        return $this->hasOne(Aluno_materia_observacao::class);
+    }
+
+
+    public function aluno_materia_presenca()
+    {
+        return $this->hasOne(Aluno_materia_presenca::class);
+    }
+    public function aluno_materia_nota()
+    {
+        return $this->hasMany(Aluno_materia_nota::class);
+    }
+
+    public function prof_materia()
+    {
+        return $this->hasOne(ProfMateria::class);
+    }
+
+    public function aluno_tarefa()
+    {
+        return $this->hasOne(Aluno_tarefa::class);
+    }
+
+    public function materias()
+    {
+        return $this->hasMany(Materia::class,'aluno_materias');
+    }
+
 }

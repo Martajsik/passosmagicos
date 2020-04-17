@@ -26,7 +26,7 @@ class CreateAlunoMateriaObservacoesTable extends Migration
             $table->string('obvservacoes');
             $table->dateTime('data');
             $table->integer('materia_id')->unsigned();
-            $table->integer('cadastro_id')->unsigned();
+            $table->integer('user_id')->unsigned();
         });
     }
 

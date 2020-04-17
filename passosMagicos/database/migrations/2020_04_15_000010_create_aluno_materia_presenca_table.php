@@ -24,7 +24,7 @@ class CreateAlunoMateriaPresencaTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->dateTime('data');
-            $table->integer('cadastro_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('materia_id')->unsigned();
         });
     }
@@ -34,8 +34,8 @@ class CreateAlunoMateriaPresencaTable extends Migration
      *
      * @return void
      */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }

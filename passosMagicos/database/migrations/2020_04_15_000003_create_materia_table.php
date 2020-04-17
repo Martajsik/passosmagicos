@@ -10,7 +10,7 @@ class CreateMateriaTable extends Migration
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'materia';
+    public $tableName = 'materias';
 
     /**
      * Run the migrations.

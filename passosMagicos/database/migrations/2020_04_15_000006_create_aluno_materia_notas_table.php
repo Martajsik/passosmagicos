@@ -25,7 +25,7 @@ class CreateAlunoMateriaNotasTable extends Migration
             $table->increments('id');
             $table->string('periodo', 45);
             $table->float('nota');
-            $table->integer('cadastro_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('materia_id')->unsigned();
         });
     }
@@ -35,8 +35,8 @@ class CreateAlunoMateriaNotasTable extends Migration
      *
      * @return void
      */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }

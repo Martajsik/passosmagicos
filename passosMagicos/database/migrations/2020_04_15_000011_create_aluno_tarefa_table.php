@@ -25,7 +25,7 @@ class CreateAlunoTarefaTable extends Migration
             $table->increments('id');
             $table->dateTime('data');
             $table->integer('unidades_id')->unsigned();
-            $table->integer('cadastro_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('materia_id')->unsigned();
         });
     }
@@ -35,8 +35,8 @@ class CreateAlunoTarefaTable extends Migration
      *
      * @return void
      */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }

@@ -24,7 +24,7 @@ class CreateProfMateriaTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('unidades_id')->unsigned();
-            $table->integer('cadastro_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('materia_id')->unsigned();
         });
     }

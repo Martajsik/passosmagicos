@@ -9,7 +9,8 @@ class ProfMateria extends Model
     //
     protected $fillable = [
         "materia_id",
-        "unidade_id"
+        "unidade_id",
+        "cadastro_id" //verificar sobre o cadastro. Não lembro o motivo de excluir o cadastro.
     ];
 
     public function materia()

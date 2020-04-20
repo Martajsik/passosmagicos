@@ -3,16 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Materia;
-use App\Unidade;
 
-class Tarefa extends Model
+class AlunoMateriaNota extends Model
 {
     //
     protected $fillable = [
-        "descricao",
-        "data",
-        "unidade_id",
+        "periodo",
+        "nota",
+        "cadastro_id",
         "materia_id"
     ];
 
@@ -21,8 +19,8 @@ class Tarefa extends Model
         return $this->belongsTo(Materia::class);
     }
 
-    public function unidade()
+    public function cadastro()
     {
-        return $this->belongsTo(Unidade::class);
+        return $this->belongsTo(Cadastro::class);
     }
 }

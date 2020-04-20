@@ -3,15 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Materia;
-use App\Cadastro;
-use App\Unidade;
 
-class Aluno_tarefa extends Model
+class AlunoMateriaObservacao extends Model
 {
     //
     protected $fillable = [
-        "data"
+        "obvservacoes",
+        "data",
+        "materia_id",
+        "cadastro_id"
     ];
 
     public function materia()
@@ -22,9 +22,5 @@ class Aluno_tarefa extends Model
     public function cadastro()
     {
         return $this->hasOne(Cadastro::class);
-    }
-
-    public function unidade(){
-        return $this->hasOne(Unidade::class);
     }
 }

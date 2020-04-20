@@ -3,23 +3,29 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Materia;
-use App\Cadastro;
 
-class Aluno_materia_presenca extends Model
+class AlunoTarefa extends Model
 {
     //
     protected $fillable = [
         "data",
-        ];
+        "unidade_id",
+        "cadastro_id",
+        "materia_id"
+    ];
 
     public function materia()
     {
-        return $this->belongsTo(Materia::class);
+        return $this->hasOne(Materia::class);
     }
 
     public function cadastro()
     {
         return $this->hasOne(Cadastro::class);
+    }
+
+    public function unidade()
+    {
+        return $this->hasOne(Unidade::class);
     }
 }

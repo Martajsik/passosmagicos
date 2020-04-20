@@ -3,12 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Aluno_materia_observacao;
-use App\Aluno_materia;
-use App\Aluno_materia_presenca;
-use App\Aluno_materia_nota;
-use App\Prof_materia;
-use App\Aluno_tarefa;
+
 
 class Cadastro extends Model
 {
@@ -24,31 +19,31 @@ class Cadastro extends Model
 
     public function aluno_materia_observacao()
     {
-        return $this->hasOne(Aluno_materia_observacao::class);
+        return $this->hasOne(AlunoMateriaObservacao::class);
     }
 
     public function aluno_materia()
     {
-        return $this->hasOne(Aluno_materia::class);
+        return $this->hasOne(Materia::class);//verificar se é isso mesmo!
     }
 
     public function aluno_materia_presenca()
     {
-        return $this->hasOne(Aluno_materia_presenca::class);
+        return $this->hasOne(AlunoMateriaPresenca::class);
     }
     public function aluno_materia_nota()
     {
-        return $this->hasMany(Aluno_materia_nota::class);
+        return $this->hasMany(AlunoMateriaNota::class);
     }
 
     public function prof_materia()
     {
-        return $this->hasOne(Prof_materia::class);
+        return $this->hasOne(ProfMateria::class);
     }
 
     public function aluno_tarefa()
     {
-        return $this->hasOne(Aluno_tarefa::class);
+        return $this->hasOne(AlunoTarefa::class);
     }
 
 }

@@ -21,7 +21,7 @@ class Unidade extends Model
     ];
 
     public function aluno_tarefa(){
-        return $this-> hasone(Aluno_tarefa::class);
+        return $this-> hasone(AlunoTarefa::class);
     }
 
     public function tarefa(){
@@ -29,6 +29,6 @@ class Unidade extends Model
     }
 
     public function prof_materia(){
-        return $this-> hasMany(Prof_materia::class);
+        return $this-> hasMany(ProfMateria::class);
     }
 }

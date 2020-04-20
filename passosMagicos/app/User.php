@@ -41,17 +41,18 @@ class User extends Authenticatable
 
     public function aluno_materia_observacao()
     {
-        return $this->hasOne(Aluno_materia_observacao::class);
+        return $this->hasOne(AlunoMateriaObservacao::class);
     }
 
 
     public function aluno_materia_presenca()
     {
-        return $this->hasOne(Aluno_materia_presenca::class);
+        return $this->hasOne(AlunoMateriaPresenca::class);
     }
+
     public function aluno_materia_nota()
     {
-        return $this->hasMany(Aluno_materia_nota::class);
+        return $this->hasMany(AlunoMateriaNota::class);
     }
 
     public function prof_materia()
@@ -61,7 +62,7 @@ class User extends Authenticatable
 
     public function aluno_tarefa()
     {
-        return $this->hasOne(Aluno_tarefa::class);
+        return $this->hasOne(AlunoTarefa::class);
     }
 
     public function materias()

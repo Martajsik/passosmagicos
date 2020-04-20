@@ -3,15 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Cadastro;
-use App\Materia;
 
-class Aluno_materia_nota extends Model
+class AlunoMateriaPresenca extends Model
 {
     //
     protected $fillable = [
-        "periodo",
-        "nota",
+        "data",
+        "cadastro_id",
+        "materia_id"
     ];
 
     public function materia()
@@ -21,6 +20,6 @@ class Aluno_materia_nota extends Model
 
     public function cadastro()
     {
-        return $this->belongsTo(Cadastro::class);
+        return $this->hasOne(Cadastro::class);
     }
 }

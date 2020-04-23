@@ -13,7 +13,7 @@
 
     <body>
         <header class="topo">
-            <img class="logo" src="/img//logo2.jpg">
+            <img class="logo" src="/passosMagicos/storage/app/public/img/logo.png">
             <nav>
                 <ul class="nav_links">
                     <li><a href="#">serviços</a></li>
@@ -21,7 +21,7 @@
                     <li><a href="#">sobre</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="#"><button>entrar</button></a>
+            <a class="cta" href="adm/create"><button>entrar</button></a>
         </header>
         <div class="feed">
             <div class="card">

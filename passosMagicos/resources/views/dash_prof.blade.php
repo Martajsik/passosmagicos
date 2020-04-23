@@ -9,15 +9,16 @@
 </head>
 
 <body>
+
     <header class="topo">
         <div class="logo">
-            <img src="/img//dash_prof.jpeg" alt="">
+            <img src="../passosMagicos/storage/app/public/img/dash_prof2.jpeg" alt="">
         </div>
 
         <nav>
             <ul class="nav_links">
                 <span class="saudacao">Seja bem vindo, professor!</span>
-                <li><a href="#">home</a></li>
+                <li><a href="adm">home</a></li>
                 <li><a href="#">atualização de info</a></li>
                 <li><a href="#">sair</a></li>
             </ul>
@@ -30,18 +31,14 @@
                     <button class="turma">Turma 1</button>
                     <button class="turma">Turma 2</button>
                     <button class="turma">Turma 3</button>
-                    <button class="turma">Turma 4</button>
-                    <button class="turma">Turma 5</button>
-                    <button class="turma">Turma 6</button>
-                    <button type="submit" class="notas">Notas</button>
+                    <button type="submit" class="notas">Subir notas</button>
                 </aside>
                 <!-- Inicio caixa de unidades -->
                 <aside class="unidades">
                     <select name="und" id="und">
-                        <option selected disabled> Unidades</option>
+                        <option selected disabled> Selecione as unidades</option>
                         <option value="Centro">Centro</option>
-                        <option value="Cipo">Cipó</option>
-                        <option value="Felipinho">Felipinho</option>
+                         <option value="Felipinho">Felipinho</option>
                         <option value="Granjinha">Granjinha</option>
                     </select>
                 </aside>

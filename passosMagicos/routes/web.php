@@ -7,9 +7,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('aluna', 'AlunaController');
-Route::resource('professor', 'ProfessorController');
-Route::resource('adm', 'AdmController');
+Route::resource('aluna', 'AlunaController'); // aqui estão todas as rotas referente a aluna
+Route::resource('professor', 'ProfessorController');//aqui estão todas as rotas referente a professor
+Route::resource('adm', 'AdmController');//aqui estão todas as rotas referente ao adm
 
 // Route::get('aluna/cadastro','AlunaController@create');
 // Route::post('aluna/cadastro','AlunaController@store');

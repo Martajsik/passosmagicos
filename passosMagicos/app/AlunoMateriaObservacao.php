@@ -21,6 +21,6 @@ class AlunoMateriaObservacao extends Model
 
     public function cadastro()
     {
-        return $this->hasOne(Cadastro::class);
+        return $this->hasOne(User::class);
     }
 }

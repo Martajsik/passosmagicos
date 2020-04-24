@@ -10,7 +10,7 @@ class ProfMateria extends Model
     protected $fillable = [
         "materia_id",
         "unidade_id",
-        "cadastro_id" //verificar sobre o cadastro. Não lembro o motivo de excluir o cadastro.
+        "user_id"
     ];
 
     public function materia()
@@ -20,11 +20,13 @@ class ProfMateria extends Model
 
     public function cadastro()
     {
-        return $this->hasOne(Cadastro::class);
+        return $this->hasOne(User::class);
     }
 
     public function unidade()
     {
         return $this->belongsTo(Unidade::class);
     }
+
+    
 }

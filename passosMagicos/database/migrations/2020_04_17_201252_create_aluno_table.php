@@ -21,6 +21,15 @@ class CreateAlunoTable extends Migration
             //se quiser adc mais campos//
             $table->timestamps();
         });
+        Schema::table('alunos', function (Blueprint $table) {
+
+            $table->index(["user_id"], 'fk_alunos_users_idx');
+
+            $table->foreign('user_id', 'fk_alunos_users_principal_idx')
+                ->references('id')->on('users')
+                ->onDelete('no action')
+                ->onUpdate('no action');
+        });
     }
 
     /**

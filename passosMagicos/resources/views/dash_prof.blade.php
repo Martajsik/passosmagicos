@@ -12,7 +12,7 @@
 
     <header class="topo">
         <div class="logo">
-            <img src="../passosMagicos/storage/app/public/img/dash_prof2.jpeg" alt="">
+            <img src="/storage/img/dash_prof2.jpeg" alt="">
         </div>
 
         <nav>

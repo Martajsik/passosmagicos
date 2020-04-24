@@ -70,4 +70,9 @@ class User extends Authenticatable
         return $this->hasMany(Materia::class);
     }
 
+    public function aluno()
+    {
+        return $this->hasOne(Aluno::class);
+    }
+
 }

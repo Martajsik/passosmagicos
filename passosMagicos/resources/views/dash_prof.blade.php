@@ -19,7 +19,7 @@
             <ul class="nav_links">
                 <span class="saudacao">Seja bem vindo, professor!</span>
                 <li><a href="adm">home</a></li>
-                <li><a href="#">atualização de info</a></li>
+                <li><a href="/professor/professor/edit">atualização de info</a></li>
                 <li><a href="#">sair</a></li>
             </ul>
         </nav>

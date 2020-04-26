@@ -6,80 +6,80 @@ use Illuminate\Http\Request;
 
 class AdmController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function mostrarHome()
     {
-        return view('home');
+        return view('adm_dashboard'); //precisa ser criada
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return view('login');
+    //AÇÕES PARA O PROFESSOR
+
+    public function cadastroProfessor(){
+        return view('cadastro_professor');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function cadastrar(Request $request)
     {
-        //
+        //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function listaProfessores()
     {
-        //
+        //logica mostrar todos os prof cadastrados no BD
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function listaProfessor(Request $requeste,$id)
     {
-        //
+        // mostra um professor em específico no BD a partir do id dele
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function editaProfessor($id){
+        //logica se o professor existe no BD ou nao. Aparecer o nome dele.
+        return view('editProfessor');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function editarProfessor(Request $request,$id){
+        //editar um professor especifico
     }
+
+    public function excluirProfessor($id){
+        //excluir do banco de dados
+    }
+
+
+    //AÇÕES PARA O ALUNO:
+
+    public function cadastroAluno()
+    {
+        return view('cadastro_aluna');
+    }
+
+    public function listaAlunos()
+    {
+        //logica mostrar todos os alunos cadastrados no BD
+    }
+
+    public function listaAluno($id)
+    {
+        // mostra um aluno em específico no BD a partir do id dele
+    }
+
+    public function editaAluno($id)
+    {
+        //logica se o aluno existe no BD ou nao. Aparecer o nome dele.
+        return view('editAluno');
+        //precisa fazer essa view
+    }
+
+    public function editarAluno(Request $request,$id)
+    {
+        //editar um aluno especifico
+    }
+
+    public function excluirAluno($id)
+    {
+        //excluir do banco de dados
+    }
+
+
+
 }

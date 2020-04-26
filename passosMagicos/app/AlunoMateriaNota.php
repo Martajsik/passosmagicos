@@ -21,6 +21,6 @@ class AlunoMateriaNota extends Model
 
     public function cadastro()
     {
-        return $this->belongsTo(Cadastro::class);
+        return $this->belongsTo(User::class);
     }
 }

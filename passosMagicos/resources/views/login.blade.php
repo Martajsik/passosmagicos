@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="{{asset('css/style_login.css')}}">
 </head>
 <body>
-    <form class="box" action="index.html" method="POST">
+    <form class="box" action="" method="POST">
+        @csrf
         <h1>login</h1>
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="password">
+        <input type="text" name="user" placeholder="Username">
+        <input type="password" name="senha" placeholder="password">
         <input type="submit" name="" value="login">
     </form>
 </body>

@@ -15,7 +15,7 @@ Route::group(['prefix' => '/'], function () {
 
         Route::group(['prefix' => '/professor'], function () {
             Route::get('/cadastro', 'AdmController@cadastroProfessor'); //mostra a view cadastro
-            Route::post('/cadastro', 'AdmController@cadastrar'); //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
+            Route::post('/cadastro', 'AdmController@cadastrar')->name('cadastro'); //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
 
             Route::get('/lista', 'AdmController@listaProfessores'); //mostra a lista de professores
 

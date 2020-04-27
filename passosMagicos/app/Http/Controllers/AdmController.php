@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdmController extends Controller
@@ -14,13 +15,20 @@ class AdmController extends Controller
 
     //AÇÕES PARA O PROFESSOR
 
-    public function cadastroProfessor(){
+    public function cadastroProfessor()
+    {
         return view('cadastro_professor');
     }
 
     public function cadastrar(Request $request)
     {
+        $cadastro = $request->all();
+        $newCadastro = new User();
+        $newCadastro->fill($cadastro)->save();
+        return redirect('/adm/home');
+
         //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
+
     }
 
     public function listaProfessores()
@@ -28,21 +36,29 @@ class AdmController extends Controller
         //logica mostrar todos os prof cadastrados no BD
     }
 
-    public function listaProfessor(Request $requeste,$id)
+    public function listaProfessor(Request $request)
     {
+        $lista = $request->all();
+        $lista->fill($lista);
+        return view('listaProfessores', compact('lista'));
+
         // mostra um professor em específico no BD a partir do id dele
+
     }
 
-    public function editaProfessor($id){
+    public function editaProfessor($id)
+    {
         //logica se o professor existe no BD ou nao. Aparecer o nome dele.
         return view('editProfessor');
     }
 
-    public function editarProfessor(Request $request,$id){
+    public function editarProfessor(Request $request, $id)
+    {
         //editar um professor especifico
     }
 
-    public function excluirProfessor($id){
+    public function excluirProfessor($id)
+    {
         //excluir do banco de dados
     }
 
@@ -56,8 +72,8 @@ class AdmController extends Controller
 
     public function listaAlunos(Request $request)
     {
-        $lista=Aluno::all();
-         return view('listaAlunos',['lista'=>$lista]);
+        $lista = User::all(); //antes aqui Aluno::all()
+        return view('listaAlunos', ['lista' => $lista]);
         // $lista->fill($request->all());
 
 
@@ -81,7 +97,7 @@ class AdmController extends Controller
         //precisa fazer essa view
     }
 
-    public function editarAluno(Request $request,$id)
+    public function editarAluno(Request $request, $id)
     {
         $editara = Aluno::find($id);
 
@@ -103,7 +119,4 @@ class AdmController extends Controller
         return view('editaAluno');
         //excluir do banco de dados
     }
-
-
-
 }

@@ -34,17 +34,17 @@
                         <th>Nome</td>
                         </tr>
                         <tr>
-                            <th>Contato</th>
+                            <th>CPF</th>
                         </tr>
                 </thead>
                 <tbody>
                     @foreach($lista as $aluno)
                     <tr>
-                    <td>{{$aluno['nome']}}</td>
+                    <td>{{$aluno['name']}}</td>
                     </tr>
 
                     <tr>
-                        <td>{{$aluno['contact']}}</td>
+                        <td>{{$aluno['cpf']}}</td>
                     </tr>
 
                     <tr>

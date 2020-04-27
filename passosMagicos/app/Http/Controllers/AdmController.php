@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Aluno;
 use Illuminate\Http\Request;
 
 class AdmController extends Controller
 {
     public function mostrarHome()
     {
-        return view('adm_dashboard'); //precisa ser criada
+        return view('homeAdm'); //precisa ser criada
     }
 
     //AÇÕES PARA O PROFESSOR
@@ -53,19 +54,22 @@ class AdmController extends Controller
         return view('cadastro_aluna');
     }
 
-    public function listaAlunos()
+    public function listaAlunos(Request $request)
     {
-        $lista->fill($request->all());
+        $lista=Aluno::all();
+         return view('listaAlunos',['lista'=>$lista]);
+        // $lista->fill($request->all());
 
 
-        return view('listaAlunos' compact('lista'));
-        //logica mostrar todos os alunos cadastrados no BD
+        // return view('listaAlunos', compact('lista'));
+        //logica mostrar todos os alunos cadastrados no BD (acho que seria $lista=Alunos::all() e dps return view('listaAlunos',['lista'=>$lista]))
+
     }
 
     public function listaAluno($id)
     {
         $lista = Aluno::find($id);
-        
+
         return $lista;
         // mostra um aluno em específico no BD a partir do id dele
     }
@@ -73,7 +77,7 @@ class AdmController extends Controller
     public function editaAluno($id)
     {
         //logica se o aluno existe no BD ou nao. Aparecer o nome dele.
-        return view('editAluno');
+        return view('editaAluno');
         //precisa fazer essa view
     }
 
@@ -92,7 +96,7 @@ class AdmController extends Controller
 
     public function excluirAluno($id)
     {
-        
+
         $excluira = Aluno::findOrFail($id);
         $excluira->delete();
 

@@ -1,0 +1,84 @@
+*{
+    margin:0 auto;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    font-size: 10px;
+}
+.content{
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8EB6BF;
+}
+
+.content__saudacao{
+    width: 50%;
+}
+.content__text{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:#fff;
+}
+
+.content__list--itens{
+    display: flex;
+    align-items: center;
+}
+.content__list--item{
+    list-style: none;
+    margin: 0 2vw;
+}
+.content__list--link{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color:#fff;
+}
+.primary__content{
+    /* background-color: pink; */
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+.card__primary--aluno,
+.card__primary--professor {
+    width: 15vw;
+    height: 50vh;
+
+
+}
+.card__primary--header,
+.card__primary--bod {
+    background-color: #e5e5e5;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+.card__text{
+    margin:0 auto;
+    font-size: 2.1rem;
+}
+
+.card__primary--body{
+    background-color: #f5f5f5;
+    height: 40%;
+    display: flex;
+    align-items: center;
+}
+.card__button{
+    border-radius: 10px;
+    padding:2vh;
+    background-color: #8EB6BF;
+}
+.card__button--link{
+    text-decoration: none;
+    font-size: 1.25em;
+    color:#fff;
+    font-weight: bold;
+}

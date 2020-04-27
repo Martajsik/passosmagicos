@@ -13,15 +13,14 @@
     <nav class="nav">
 
         <div class="nav__infos">
-            {{-- <img class="nav__infos--foto" src="/passosMagicos/storage/app/public/img/dash_prof.jpeg" alt="foto do professor"> --}}
-            <h1 class="nav__infos--title">Editar professor xxxxx</h1>
+            <h1 class="nav__infos--title">Editar professor </h1>
         </div>
 
         <div class="nav__list">
             <ul class="nav__list--items">
-                <li class="nav__list--item"><a class="nav__list--link" href="/adm">Home</a></li>
-                <li class="nav__list--item"><a class="nav__list--link" href="/professor/">Voltar</a></li>
-                <li class="nav__list--item"><a class="nav__list--link" href="#">Sair</a></li>
+                <li class="nav__list--item"><a class="nav__list--link" href="/home">Home</a></li>
+                <li class="nav__list--item"><a class="nav__list--link" href="/adm/professor/lista">Voltar</a></li>
+                <li class="nav__list--item"><a class="nav__list--link" href="/login">Sair</a></li>
             </ul>
         </div>
     </nav>
@@ -29,36 +28,28 @@
 
 <main class="primary__content">
      <section class="primary__content--changes">
-         <form class="form" action="" method="post" enctype="multipart/form-data">
+         <form class="form" action="" method="post" >
+             @csrf
 
                  <label class ="form__label"for="name">Nome Completo:</label>
 
-                 <input class="form__space" type="text" name="name" id="name">
+                 <input class="form__space" type="text" name="name" id="name" value="">
 
                  <label class ="form__label"for="email">E-mail:</label>
 
-                 <input class="form__space" type="email" name="email" id="email">
+                 <input class="form__space" type="email" name="email" id="email" value="">
 
-                 <label class ="form__label"for="password">Senha:</label>
+                 <label class ="form__label"for="email-verify">Confirmar e-mail:</label>
 
-                 <input class="form__space" type="password" name="password" id="password">
+                 <input class="form__space" type="email" name="email-verify" id="email-verify" value="">
 
-                 <label class ="form__label"for="password-verify">Confirmar senha:</label>
+                 <label class ="form__label"for="cpf">CPF:</label>
 
-                 <input class="form__space" type="password" name="password-verify" id="password-verify">
+                 <input class="form__space" type="number" name="cpf" id="cpf" value="">
 
-                 <label class ="form__label"for="contact">Telefone:</label>
+                 <label class ="form__label"for="rg">RG:</label>
 
-                 <input class="form__space" type="number" name="contact" id="contact">
-
-                 <label class ="form__label"for="subject">Matéria:</label>
-
-                 <input class="form__space" type="text" name="subject" id="subject">
-
-                 <label class ="form__label"for="photo">Foto de Perfil:</label>
-
-                 <input class="form__space" type="file" name="photo" id="photo">
-
+                 <input class="form__space" type="number" name="rg" id="rg" value="">
 
                  <button class="form__button--submit" type="submit">Editar</button>
              </form>

@@ -111,10 +111,10 @@
     border-right: 1px solid #7d8597;
 }
 
-.form__space:last-of-type{
+/* .form__space:last-of-type{
     background-color: white;
     border:none;
-}
+} */
 
 .form__button--submit {
     width: 60%;

@@ -55,11 +55,18 @@ class AdmController extends Controller
 
     public function listaAlunos()
     {
+        $lista->fill($request->all());
+
+
+        return view('listaAlunos' compact('lista'));
         //logica mostrar todos os alunos cadastrados no BD
     }
 
     public function listaAluno($id)
     {
+        $lista = Aluno::find($id);
+        
+        return $lista;
         // mostra um aluno em específico no BD a partir do id dele
     }
 
@@ -72,11 +79,24 @@ class AdmController extends Controller
 
     public function editarAluno(Request $request,$id)
     {
+        $editara = Aluno::find($id);
+
+        $editara->fill($request->all());
+
+        $editara->save();
+
+        return view('editaAluno');
+
         //editar um aluno especifico
     }
 
     public function excluirAluno($id)
     {
+        
+        $excluira = Aluno::findOrFail($id);
+        $excluira->delete();
+
+        return view('editaAluno');
         //excluir do banco de dados
     }
 

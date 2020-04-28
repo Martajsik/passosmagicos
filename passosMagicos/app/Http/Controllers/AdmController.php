@@ -89,7 +89,7 @@ class AdmController extends Controller
 
         $editar->save();
 
-        return view('editProfessor');
+        // return view('editProfessor');
         return view('editProfessor', ['editar' => $editar]);
     }
 
@@ -98,7 +98,7 @@ class AdmController extends Controller
         //excluir do banco de dados
         $excluir = User::findOrFail($id);
         $excluir->delete();
-        return view('listaProfessores');
+        return view('listaProfessores', ['lista' => $lista]);
     }
 
 

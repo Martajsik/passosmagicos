@@ -28,12 +28,12 @@
 
 <main class="primary__content">
      <section class="primary__content--changes">
-         <form class="form" action="{{route('edita')}}" method="post" >
+         <form class="form" action="" method="post" >
              @csrf
 
                  <label class ="form__label" for="name">Nome Completo:</label>
 
-                 <input class="form__space" type="text" name="name" id="name" value="">
+         <input class="form__space" type="text" name="name" id="name" value="{{$editar->nome}}">
 
                  <label class ="form__label" for="email">E-mail:</label>
 

@@ -55,11 +55,6 @@
                         <td>{{$professor['tipo']}}</td>
                     </tr>
 
-                    {{-- <tr>
-                        <td><a href="/adm/professor/{id}">Ver</a></td>
-                        <td><a href="/adm/professor/{id}/editar">Editar</a></td>
-                        <td><a href="excluirProf">Excluir</a></td>
-                    </tr> --}}
                      <form action="{{ route('excluirProf',$professor->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
@@ -69,9 +64,8 @@
                         </td>
                     </tr>
                 </form>
-                     <form action="{{ route('edita',$professor->id) }}" method="POST">
+                     <form action="{{ route('edita',$professor->id) }}" method="post">
                     @csrf
-                    @method('PUT')
                     <tr>
                         <td>
                             <button type="submit">Editar</button>
@@ -83,16 +77,15 @@
                     @endforeach
                 </tbody>
             </table>
-{{-- {{route('excluirProf',['professor'=>$professor->id])}} --}}
             <div class="botoes">
-                <button type="submit"><a href="/adm/aluno/cadastro" value="" class="botao__cadastro"></a>Cadastrar Professor</button>
+
+                   <a href="{{route('cadastro')}}" value="" class="botao__cadastro"> Cadastrar Professor</a>
+
 
             </div>
         </div>
 
 </main>
-
-
 </body>
 </html>
 

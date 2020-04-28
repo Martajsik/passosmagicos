@@ -33,11 +33,11 @@
 
                  <label class ="form__label" for="name">Nome Completo:</label>
 
-         <input class="form__space" type="text" name="name" id="name" value="{{$editar->nome}}">
+         <input class="form__space" type="text" name="name" id="name" value="{{$editar->name}}">
 
                  <label class ="form__label" for="email">E-mail:</label>
 
-                 <input class="form__space" type="email" name="email" id="email" value="">
+                 <input class="form__space" type="email" name="email" id="email" value="{{$editar->email}}">
 
                  <label class ="form__label" for="email-verify">Confirmar e-mail:</label>
 
@@ -45,13 +45,13 @@
 
                  <label class ="form__label" for="cpf">CPF:</label>
 
-                 <input class="form__space" type="number" name="cpf" id="cpf" value="">
+                 <input class="form__space" type="number" name="cpf" id="cpf" value="{{$editar->cpf}}">
 
                  <label class ="form__label" for="rg">RG:</label>
 
-                 <input class="form__space" type="number" name="rg" id="rg" value="">
+                 <input class="form__space" type="number" name="rg" id="rg" value="{{$editar->rg}}">
 
-                 <button class="form__button--submit" type="submit">Editar</button>
+                 <button class="form__button--submit" type="submit" name="editar">Editar</button>
              </form>
      </section>
 

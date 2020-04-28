@@ -76,7 +76,6 @@ class AdmController extends Controller
 
     public function editaProfessor($id)
     {
-        //logica se o professor existe no BD ou nao. Aparecer o nome dele.
         return view('editProfessor');
     }
 
@@ -98,7 +97,7 @@ class AdmController extends Controller
         //excluir do banco de dados
         $excluir = User::findOrFail($id);
         $excluir->delete();
-        return view('listaProfessores', ['lista' => $lista]);
+        return view('listaProfessores', ['lista' => $excluir]);
     }
 
 
@@ -117,8 +116,6 @@ class AdmController extends Controller
     }
 
 
-    // return view('listaAlunos', compact('lista'));
-    //logica mostrar todos os alunos cadastrados no BD (acho que seria $lista=Alunos::all() e dps return view('listaAlunos',['lista'=>$lista]))
 
 
 

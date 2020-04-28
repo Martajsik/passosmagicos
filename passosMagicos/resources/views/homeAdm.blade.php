@@ -31,7 +31,7 @@
         </div>
         <div class="card__primary--body">
             <button class="card__button">
-                <a href="/adm/aluno/lista" class="card__button--link">Visualizar</a>
+                <a href="/aluno/lista" class="card__button--link">Visualizar</a>
             </button>
         </div>
     </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="card__primary--body">
             <button class="card__button">
-                <a href="/adm/professor/lista" class="card__button--link">Visualizar</a>
+            <a href="{{route('listaProf')}}" class="card__button--link">Visualizar</a>
             </button>
         </div>
     </div>

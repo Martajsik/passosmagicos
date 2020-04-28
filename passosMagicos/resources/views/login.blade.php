@@ -14,6 +14,7 @@
         <input type="text" name="user" placeholder="Username">
         <input type="password" name="senha" placeholder="password">
         <input type="submit" name="" value="login">
+        <a href="{{route('homeAdm')}}">AREA ADM</a>
     </form>
 </body>
 </html>

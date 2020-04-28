@@ -22,15 +22,15 @@ Route::group(['prefix' => '/'], function () {
             Route::get('/{id}', 'AdmController@listaProfessor'); //mostra um professor em especifico
 
             Route::get('/{id}/editar', 'AdmController@editaProfessor'); //mostra a view de editar prof especifico
-            Route::put('/{id}/editar', 'AdmController@editarProfessor'); //efetua a edicao do prof especifico
+            Route::put('/{id}/editar', 'AdmController@editarProfessor')->name('edita'); //efetua a edicao do prof especifico
 
-            Route::delete('/{id}/excluir', 'AdmController@excluirProfessor'); //efetua a exclusão
+            Route::delete('/{id}/excluir', 'AdmController@excluirProfessor')->name('excluirProf'); //efetua a exclusão
 
         });
 
         Route::group(['prefix' => '/aluno'], function () {
             Route::get('/cadastro', 'AdmController@cadastroAluno'); //mostra a view cadastro
-            Route::post('/cadastro', 'AdmController@cadastrar'); //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
+            Route::post('/cadastro', 'AdmController@cadastrar')->name('cadastro.aluno'); //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
 
             Route::get('/lista', 'AdmController@listaAlunos'); //mostra a lista de alunoes
 

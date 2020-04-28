@@ -20,27 +20,55 @@ class AdmController extends Controller
         return view('cadastro_professor');
     }
 
+
     public function cadastrar(Request $request)
     {
         $cadastro = $request->all();
-        $newCadastro = new User();
-        $newCadastro->fill($cadastro)->save();
-        return redirect('/adm/home');
+
+        if ($cadastro['tipo'] == 1) { //professor
+            $newCadastroUser = new User();
+            $newCadastroUser->fill($cadastro)->save();
+            return redirect('/adm/home');
+        } else if ($cadastro['tipo'] == 2) { //aluno
+
+            $newCadastroUser = new User();
+            $newCadastroUser->name = $request->get('name');
+            $newCadastroUser->email = $request->get('email');
+            $newCadastroUser->password = $request->get('password');
+            $newCadastroUser->cpf = $request->get('cpf');
+            $newCadastroUser->rg = $request->get('rg');
+            $newCadastroUser->tipo = $request->get('tipo');
+            $newCadastroUser->save();
+            $newCadastroUser_id = $newCadastroUser->user_id;
+
+            $newCadastroAluno = new Aluno();
+            $newCadastroAluno->nome_pais = $request->get('nome_pais');
+            $newCadastroAluno->contato = $request->get('contato');
+            $newCadastroAluno->user_id = $newCadastroUser_id;
+            $newCadastroAluno->save();
+
+
+            return redirect('/adm/home');
+        }
 
         //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
 
     }
 
-    public function listaProfessores()
+    public function listaProfessores(Request $request)
     {
         //logica mostrar todos os prof cadastrados no BD
+        $lista = User::all();
+        return view('listaProfessores', ['lista' => $lista]);
     }
 
-    public function listaProfessor(Request $request)
+    public function listaProfessor(Request $request,$id)
     {
-        $lista = $request->all();
-        $lista->fill($lista);
-        return view('listaProfessores', compact('lista'));
+
+        // $lista->fill($request->all());
+        // $lista = $request->all();
+        // $lista->fill($lista);
+        // return view('listaProfessores', compact('lista', $lista));
 
         // mostra um professor em específico no BD a partir do id dele
 
@@ -55,11 +83,22 @@ class AdmController extends Controller
     public function editarProfessor(Request $request, $id)
     {
         //editar um professor especifico
+        $editar = User::find($id);
+
+        $editar->fill($request->all());
+
+        $editar->save();
+
+        return view('editProfessor');
+        return view('editProfessor', ['editar' => $editar]);
     }
 
     public function excluirProfessor($id)
     {
         //excluir do banco de dados
+        $excluir = User::findOrFail($id);
+        $excluir->delete();
+        return view('listaProfessores');
     }
 
 
@@ -75,12 +114,13 @@ class AdmController extends Controller
         $lista = User::all(); //antes aqui Aluno::all()
         return view('listaAlunos', ['lista' => $lista]);
         // $lista->fill($request->all());
-
-
-        // return view('listaAlunos', compact('lista'));
-        //logica mostrar todos os alunos cadastrados no BD (acho que seria $lista=Alunos::all() e dps return view('listaAlunos',['lista'=>$lista]))
-
     }
+
+
+    // return view('listaAlunos', compact('lista'));
+    //logica mostrar todos os alunos cadastrados no BD (acho que seria $lista=Alunos::all() e dps return view('listaAlunos',['lista'=>$lista]))
+
+
 
     public function listaAluno($id)
     {

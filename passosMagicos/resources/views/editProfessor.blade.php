@@ -28,26 +28,26 @@
 
 <main class="primary__content">
      <section class="primary__content--changes">
-         <form class="form" action="" method="post" >
+         <form class="form" action="{{route('edita')}}" method="post" >
              @csrf
 
-                 <label class ="form__label"for="name">Nome Completo:</label>
+                 <label class ="form__label" for="name">Nome Completo:</label>
 
                  <input class="form__space" type="text" name="name" id="name" value="">
 
-                 <label class ="form__label"for="email">E-mail:</label>
+                 <label class ="form__label" for="email">E-mail:</label>
 
                  <input class="form__space" type="email" name="email" id="email" value="">
 
-                 <label class ="form__label"for="email-verify">Confirmar e-mail:</label>
+                 <label class ="form__label" for="email-verify">Confirmar e-mail:</label>
 
                  <input class="form__space" type="email" name="email-verify" id="email-verify" value="">
 
-                 <label class ="form__label"for="cpf">CPF:</label>
+                 <label class ="form__label" for="cpf">CPF:</label>
 
                  <input class="form__space" type="number" name="cpf" id="cpf" value="">
 
-                 <label class ="form__label"for="rg">RG:</label>
+                 <label class ="form__label" for="rg">RG:</label>
 
                  <input class="form__space" type="number" name="rg" id="rg" value="">
 

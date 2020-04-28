@@ -36,9 +36,13 @@
                         <tr>
                             <th>CPF</th>
                         </tr>
+                        <tr>
+                            <th>Tipo</th>
+                        </tr>
                 </thead>
                 <tbody>
                     @foreach($lista as $aluno)
+                        @if($aluno['tipo']==2)
                     <tr>
                     <td>{{$aluno['name']}}</td>
                     </tr>
@@ -48,10 +52,15 @@
                     </tr>
 
                     <tr>
+                        <td>{{$aluno['tipo']}}</td>
+                    </tr>
+
+                    <tr>
                         <td><a href="/adm/aluno/{id}">Ver</a></td>
                         <td><a href="/adm/aluno/{id}/editar">Editar</a></td>
                         <td><a href="/adm/aluno//{id}/excluir">Excluir</a></td>
                     </tr>
+                    @endif
                     @endforeach
                 </tbody>
             </table>

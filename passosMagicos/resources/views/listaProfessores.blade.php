@@ -33,11 +33,14 @@
                     <tr>
                         <th>Nome</td>
                         </tr>
+                    <tr>
+                        <th>E-mail</td>
+                        </tr>
                         <tr>
                             <th>CPF</th>
                         </tr>
                         <tr>
-                            <th>Tipo</th>
+                            <th>RG</th>
                         </tr>
                 </thead>
                 <tbody>
@@ -48,11 +51,15 @@
                     </tr>
 
                     <tr>
+                        <td>{{$professor['email']}}</td>
+                    </tr>
+
+                    <tr>
                         <td>{{$professor['cpf']}}</td>
                     </tr>
 
                     <tr>
-                        <td>{{$professor['tipo']}}</td>
+                        <td>{{$professor['rg']}}</td>
                     </tr>
 
                      <form action="{{ route('excluirProf',$professor->id) }}" method="POST">

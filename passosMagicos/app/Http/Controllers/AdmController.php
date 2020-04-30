@@ -19,19 +19,26 @@ class AdmController extends Controller
     {
         return view('cadastro_professor');
     }
-
+//eu acho que tem que ter apenas uma tela de cadastro com todos os campos, tanto de prof
+//como de aluno e de acordo com o tipo: 1 ele vai incluir na tabela users(caso prof) ou
+// caso 2 vai inserir na tabela USERS E ALUNO aqui usaremos o full alter join (vai unir as duas tabelas) SELECT * FROM ALUNOS FULL OUTER JOIN USERS ON ALUNOS.ID_USER = USERS_ID.
+//Talvez fosse mais fácil incluir todos os dados necessários do aluno na tabela aluno
+//e com isso facilitaria? Pq ai o $newCadastro = new Aluno() $newCadastro->fill($cadastro)->save() return redirect('adm/home');
 
     public function cadastrar(Request $request)
     {
+
         $cadastro = $request->all();
 
         if ($cadastro['tipo'] == 1) { //professor
             $newCadastroUser = new User();
             $newCadastroUser->fill($cadastro)->save();
             return redirect('/adm/home');
-        } else if ($cadastro['tipo'] == 2) { //aluno
 
+        } elseif($cadastro['tipo'] == 2) { //aluno
             $newCadastroUser = new User();
+            $newCadastroAluno = new Aluno();
+
             $newCadastroUser->name = $request->get('name');
             $newCadastroUser->email = $request->get('email');
             $newCadastroUser->password = $request->get('password');
@@ -41,14 +48,22 @@ class AdmController extends Controller
             $newCadastroUser->save();
             $newCadastroUser_id = $newCadastroUser->user_id;
 
-            $newCadastroAluno = new Aluno();
             $newCadastroAluno->nome_pais = $request->get('nome_pais');
             $newCadastroAluno->contato = $request->get('contato');
             $newCadastroAluno->user_id = $newCadastroUser_id;
             $newCadastroAluno->save();
 
+            return redirect('adm/home');
 
-            return redirect('/adm/home');
+            //Aluno::leftjoin('alunos','alunos.id','=','user_id')
+                // ->select('users.*','alunos.*')
+                // ->where('alunos.id','=',$user_id)->get()
+
+            // $cadastrando = Aluno::leftjoin('users', 'users.id', '=', 'alunos.user_id')
+            //     ->select('alunos.nome_pais','alunos.contato','alunos.user_id','users.id','users.tipo','users.name')->get();
+            //     dd($cadastrando);
+            // //     ->save();
+            // return redirect('/adm/aluno/lista',['cadastrando'=>$cadastrando]);
         }
 
         //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
@@ -97,7 +112,9 @@ class AdmController extends Controller
         //excluir do banco de dados
         $excluir = User::findOrFail($id);
         $excluir->delete();
+
         return view('listaProfessores', ['lista' => $excluir]);
+        //testar o redirect
     }
 
 
@@ -110,7 +127,7 @@ class AdmController extends Controller
 
     public function listaAlunos(Request $request)
     {
-        $lista = User::all(); //antes aqui Aluno::all()
+        $lista = Aluno::all(); //antes aqui Aluno::all()
         return view('listaAlunos', ['lista' => $lista]);
         // $lista->fill($request->all());
     }

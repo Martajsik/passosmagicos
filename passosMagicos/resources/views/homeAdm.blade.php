@@ -21,20 +21,16 @@
             <li class="content__list--item">
                 <a class="content__list--link" href="/login">Sair</a>
             </li>
-            <li class="content__list--item">
-                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-            </li>
-
-        </ul>
+       </ul>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+            @method('POST')
+            <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+            {{ __('logout') }}
+            </a>
+        </form>
     </div>
 </header>
 <main class="primary__content">

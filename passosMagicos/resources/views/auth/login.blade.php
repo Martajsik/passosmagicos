@@ -30,7 +30,7 @@
                 {{ __('Forgot Your Password?') }}
             </a>
           @endif
-        <a href="{{route('homeAdm')}}">AREA ADM</a>
+        {{-- <a href="{{route('homeAdm')}}">AREA ADM</a> --}}
     </form>
 </body>
 </html>

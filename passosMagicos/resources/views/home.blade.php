@@ -22,6 +22,18 @@
                 </ul>
             </nav>
         <a class="cta" href="{{route('login')}}"><button>Entrar</button></a>
+        <a href="#">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+            @method('POST')
+            <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+            {{ __('logout') }}
+            </a>
+        </form>
+        </a>
+
         </header>
         <div class="feed">
             <div class="card">

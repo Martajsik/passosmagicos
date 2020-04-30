@@ -12,7 +12,7 @@ class BaseController extends Controller
     }
 
     public function mostrarLogin(){
-        return view('/auth/login');
+        return view('/login');
     }
 
     // public function receberLogin(Request $request){

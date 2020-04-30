@@ -21,7 +21,7 @@
                     <li><a href="#">sobre</a></li>
                 </ul>
             </nav>
-        <a class="cta" href="{{route('login.show')}}"><button>entrar</button></a>
+        <a class="cta" href="{{route('login')}}"><button>Entrar</button></a>
         </header>
         <div class="feed">
             <div class="card">

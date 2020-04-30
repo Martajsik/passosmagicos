@@ -12,16 +12,16 @@ class BaseController extends Controller
     }
 
     public function mostrarLogin(){
-        return view('login');
+        return view('/auth/login');
     }
 
-    public function receberLogin(Request $request){
-        //vai receber os dados do campo do login
-        //vai verificar se existe no BD,
-        //caso existe vai direcionar de acordo com o tipo de user
-        //caso nao existe continuará na pag de login e
-        //vai mostrar mensagem de erro. (ex: 'email ou senha incorretos')
-        $dados = $request ->all();
-        //dd($request->toArray());
-    }
+    // public function receberLogin(Request $request){
+    //     //vai receber os dados do campo do login
+    //     //vai verificar se existe no BD,
+    //     //caso existe vai direcionar de acordo com o tipo de user
+    //     //caso nao existe continuará na pag de login e
+    //     //vai mostrar mensagem de erro. (ex: 'email ou senha incorretos')
+    //     $dados = $request ->all();
+    //     //dd($request->toArray());
+    // }
 }

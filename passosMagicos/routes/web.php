@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,14 +33,14 @@ Route::group(['prefix' => '/'], function () {
             Route::get('/cadastro', 'AdmController@cadastroAluno'); //mostra a view cadastro
             Route::post('/cadastro', 'AdmController@cadastrar')->name('cadastro.aluno'); //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
 
-            Route::get('/lista', 'AdmController@listaAlunos'); //mostra a lista de alunoes
+            Route::get('/lista', 'AdmController@listaAlunos')->name('listaAlunos'); //mostra a lista de alunoes
 
             Route::get('/{id}', 'AdmController@listaAluno'); //mostra um aluno em especifico
 
             Route::get('/{id}/editar', 'AdmController@editaAluno'); //mostra a view de editar prof especifico
-            Route::put('/{id}/editar', 'AdmController@editarAluno'); //efetua a edicao do prof especifico
+            Route::put('/{id}/editar', 'AdmController@editarAluno')->name('editaAluno'); //efetua a edicao do prof especifico
 
-            Route::delete('/{id}/excluir', 'AdmController@excluirAluno'); //efetua a exclusão
+            Route::delete('/{id}/excluir', 'AdmController@excluirAluno')->name('excluirAluno'); //efetua a exclusão
 
         });
     });
@@ -47,3 +48,7 @@ Route::group(['prefix' => '/'], function () {
 
 });
 
+
+Auth::routes();
+
+Route::get('/adm/home', 'AdmController@mostrarHome')->name('home');

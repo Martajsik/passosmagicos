@@ -12,13 +12,22 @@
 <body>
 
 
-    <form class="box" action="{{route('cadastro.aluno')}}" method="POST">
+    <form class="box" action="{{ route('register') }}" method="POST">
         @csrf
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <h1>Cadastro</h1>
-         <input class="nome" type="text" name="nome" placeholder="nome completo">
+         <input class="nome" type="text" name="name" placeholder="nome completo">
          <input class="email" type="email" name="email" placeholder="email">
          <input class="senha" type="password" name="password" placeholder="senha">
-         <input class="senha" type="password" name="password_confirmed" placeholder="senha">
+         <input class="senha" type="password" name="password_confirmation" placeholder="senha">
          <input class="senha" type="text" name="cpf" placeholder="CPF">
          <input class="senha" type="text" name="rg" placeholder="RG">
          <input class="senha" type="password" name="tipo" placeholder="tipo">

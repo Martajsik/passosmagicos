@@ -12,6 +12,12 @@
 <form name="form" action="{{route('cadastro')}}" method="post" >
     @csrf
 <h2>Cadastro Professores</h2>
+
+    <div class="campo">
+      <label for="tipo">Código de cadastro:</label>
+      <input type="text" class="caixa" name="tipo">
+    </div>
+
     <div class="campo">
         <label for="name">Nome Completo:</label>
         <input class="caixa" type="text" name="name" id="nome">
@@ -38,23 +44,48 @@
     <div class="campo">
     <label for="pssword-verify">Confirme a senha:</label>
       <input type="password" class="caixa" name="password-verify">
-
-      <label for="tipo">Código de cadastro:</label>
-      <input type="password" class="caixa" name="tipo">
-
     </div>
     <div class="campo">
     <label for="cpf">CPF:</label>
-      <input type="text" class="caixa" name="cpf">
+      <input type="text" class="caixa cpf" name="cpf" id="cpf" autocomplete="off" maxlength="14" >
 
       <label for="rg">RG:</label>
-      <input type="text" class="caixa" name="rg">
-
+      <input type="text" class="caixa" name="rg" autocomplete="off">
     </div>
-    {{-- <input type="button" value="Cadastre-se" class="botao"> --}}
+
+    <div class="campo">
+      <label for="cep">CEP:</label>
+      <input type="text" class="caixa cep" name="cep" id="cep" value="">
+    </div>
+
+    <div class="campo">
+      <label for="logradouro">Logradouro:</label>
+      <input type="text" class="caixa" name="logradouro" id="logradouro" value="">
+    </div>
+
+    <div class="campo">
+      <label for="numero">Numero:</label>
+      <input type="text" class="caixa" name="numero" id="numero" value="">
+    </div>
+    <div class="campo">
+      <label for="complemento">Complemento:</label>
+      <input type="text" class="caixa" name="complemento" id="complemento"  value="">
+    </div>
+    <div class="campo">
+      <label for="bairro">Bairro:</label>
+      <input type="text" class="caixa" name="bairro" id="bairro" value="">
+    </div>
+    <div class="campo">
+      <label for="uf">UF:</label>
+      <input type="text" class="caixa" name="uf" id="uf"  value="">
+    </div>
+
+
     <button type="submit" name="envio">Cadastrar</button>
-
 </form>
-
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="/js/viaCep.js"></script>
+<script src="/js/jquery.mask.js"></script>
+<script src="/js/mascara.js"></script>
 </body>
 </html>

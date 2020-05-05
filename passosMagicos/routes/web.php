@@ -48,10 +48,21 @@ Route::group(['prefix' => '/'], function () {
         Route::get('/home','ProfessorController@home')->name('professor.home');
         Route::get('/home/lista/turmas','ProfessorController@listaTurmas')->name('professor.turmas');
         Route::get('/home/lista/alunos','ProfessorController@listaAlunos')->name('professor.alunos');
+
         Route::get('/home/notas','ProfessorController@mostrarNotas')->name('professor.notas');
         Route::post('/home/notas','ProfessorController@subirNotas')->name('professor.subirNotas');
-        
+        Route::get('/home/tarefas','ProfessorController@listaTarefas')->name('professor.tarefas');
+        Route::post('/home/tarefas','ProfessorController@subirTarefas')->name('professor.subirTarefas');//vai redirecionar p home notas. Na action do form poe as urls
+        Route::get('/home/presenca','ProfessorController@listaPresenca')->name('professor.listaPresenca');
+        Route::post('/home/presenca','ProfessorController@subirPresenca')->name('professor.subirPresenca');
+        Route::get('/home/anotacoes','ProfessorController@listaAnotacoes')->name('professor.listaAnotacoes');
+        Route::post('/home/anotacoes','ProfessorController@subirAnotacoes')->name('professor.subirAnotacoes');
 
+
+    });
+
+    Route::group(['prefix' => 'aluno'], function () {
+        Route::get('/home','AlunoController@mostrarHome')->name('aluno.home');
     });
 
 

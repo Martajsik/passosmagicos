@@ -26,8 +26,13 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOMEADM;
-    //tem que redirecionar, não sei como implementa
+    // protected $redirectTo = RouteServiceProvider::HOMEADM;
+    function redirectTo()
+    {
+        if (auth()->user()->tipo == 2) return (RouteServiceProvider::HOMEALUNO);
+        if (auth()->user()->tipo == 1) return (RouteServiceProvider::HOMEPROF);
+        return (RouteServiceProvider::HOMEADM);
+    }
 
     /**
      * Create a new controller instance.

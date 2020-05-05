@@ -22,6 +22,12 @@ class CreateUsersTable extends Migration
             $table->string('cpf',11)->nullable();
             $table->string('rg', 13)->nullable();
             $table->string('tipo',1)->nullable();
+            $table->string('cep')->nullable();
+            $table->string('logradouro')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('complemento')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('uf')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

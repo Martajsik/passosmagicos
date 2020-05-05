@@ -22,7 +22,7 @@
                 <a class="content__list--link" href="/login">Sair</a>
             </li>
        </ul>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        <form id="logout-form" action="{{ route('logout') }}" method="POST">
             @csrf
             @method('POST')
             <a class="dropdown-item" href="{{ route('logout') }}"

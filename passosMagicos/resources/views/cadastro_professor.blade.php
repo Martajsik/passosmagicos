@@ -50,7 +50,7 @@
       <input type="text" class="caixa cpf" name="cpf" id="cpf" autocomplete="off" maxlength="14" >
 
       <label for="rg">RG:</label>
-      <input type="text" class="caixa" name="rg" autocomplete="off">
+      <input type="text" class="caixa rg" name="rg" autocomplete="off">
     </div>
 
     <div class="campo">

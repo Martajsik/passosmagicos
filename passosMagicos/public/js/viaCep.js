@@ -1,7 +1,7 @@
 let logradouro = document.querySelector('#logradouro');
 let complemento = document.querySelector('#complemento');
 let bairro = document.querySelector('#bairro');
-let UF = document.querySelector('#uf');
+let uf = document.querySelector('#uf');
 
 cep.onkeyup = async (event) => {
 

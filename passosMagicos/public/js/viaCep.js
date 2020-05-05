@@ -10,7 +10,6 @@ cep.onkeyup = async (event) => {
 `);
                 let dadosDoCep = await resposta.json();
                 //console.log(dadosDoCep);
-
                 logradouro.value = dadosDoCep.logradouro;
                 complemento.value = dadosDoCep.complemento;
                 bairro.value = dadosDoCep.bairro;

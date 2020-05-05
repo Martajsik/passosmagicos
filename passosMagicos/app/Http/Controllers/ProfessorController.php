@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Aluno;
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
@@ -11,9 +13,50 @@ class ProfessorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function home()
     {
         return view('dash_prof');
+    }
+
+    public function listaTurmas(Request $request){
+
+    }
+    public function listaAlunos(Request $request){
+        $lista = Aluno::all();
+        $lista_total = User::all();
+        return view('listaAlunos', ['lista' => $lista, 'lista_total' => $lista_total]);
+    }
+
+    public function mostrarNotas(){
+       //controller do aluno
+    }
+
+    public function subirNotas(){
+        //form com notas de cada aluno
+    }
+
+    public function listaTarefas(Request $request){
+        //controller do aluno
+    }
+
+    public function subirTarefas(Request $request){
+
+    }
+
+    public function listaPresenca(Request $request){
+
+    }
+
+    public function subirPresenca(Request $request){
+
+    }
+
+    public function listaAnotacoes(Request $request){
+        //no controller aluno
+    }
+
+    public function subirAnotacoes(Request $request){
+        
     }
 
     /**

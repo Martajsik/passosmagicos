@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Aluno;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdmController extends Controller
 {
@@ -13,7 +14,6 @@ class AdmController extends Controller
         return view('homeAdm'); //precisa ser criada
     }
 
-    //AÇÕES PARA O PROFESSOR
 
     public function cadastroProfessor()
     {
@@ -91,9 +91,6 @@ class AdmController extends Controller
         //testar o redirect
     }
 
-
-    //AÇÕES PARA O ALUNO:
-
     public function cadastroAluno()
     {
         return view('cadastro_aluna');
@@ -106,10 +103,6 @@ class AdmController extends Controller
         return view('listaAlunos', ['lista' => $lista, 'lista_total'=>$lista_total]);
         // $lista->fill($request->all());
     }
-
-
-
-
 
     public function listaAluno($id)
     {

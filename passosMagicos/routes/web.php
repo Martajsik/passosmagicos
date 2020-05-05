@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
-
+use Laravel\Ui\AuthRouteMethods;
 
 
 Route::group(['prefix' => '/'], function () {
@@ -16,7 +15,7 @@ Route::group(['prefix' => '/'], function () {
 
         Route::group(['prefix' => '/professor'], function () {
             Route::get('/cadastro', 'AdmController@cadastroProfessor'); //mostra a view cadastro
-            Route::post('/cadastro', 'RegisterController@create')->name('cadastro'); //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
+            Route::post('/cadastro', 'Auth\RegisterController@create')->name('cadastro'); //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
 
             Route::get('/lista', 'AdmController@listaProfessores')->name('listaProf'); //mostra a lista de professores
 
@@ -45,6 +44,16 @@ Route::group(['prefix' => '/'], function () {
         });
     });
 
+    Route::group(['prefix' => 'professor'], function () {
+        Route::get('/home','ProfessorController@home')->name('professor.home');
+        Route::get('/home/lista/turmas','ProfessorController@listaTurmas')->name('professor.turmas');
+        Route::get('/home/lista/alunos','ProfessorController@listaAlunos')->name('professor.alunos');
+        Route::get('/home/notas','ProfessorController@mostrarNotas')->name('professor.notas');
+        Route::post('/home/notas','ProfessorController@subirNotas')->name('professor.subirNotas');
+        
+
+    });
+
 
 });
 
@@ -52,3 +61,4 @@ Route::group(['prefix' => '/'], function () {
 Auth::routes();
 
 Route::get('/adm/home', 'AdmController@mostrarHome')->name('home');
+// Route::post('adm/professor/cadastro', 'RegisterController@create')->name('cadastro');

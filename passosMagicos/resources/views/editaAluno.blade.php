@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editar Aluno</title>
+<title>Editar Aluno {{$editara['nome']}}</title>
     <link rel="stylesheet" href="/css/editaAlunos.css">
 </head>
 <body>
@@ -32,11 +32,11 @@
 
                  <label class ="form__label"for="name">Nome Completo:</label>
 
-                 <input class="form__space" type="text" name="name" id="name" value="">
+                 <input class="form__space" type="text" name="name" id="name" value="{{$editara->name}}">
 
                  <label class ="form__label"for="email">E-mail:</label>
 
-                 <input class="form__space" type="email" name="email" id="email" value="">
+                 <input class="form__space" type="email" name="email" id="email" value="{{$editara->email}}">
 
                  <label class ="form__label"for="email-verify">Confirmar e-mail:</label>
 
@@ -44,15 +44,15 @@
 
                  <label class ="form__label"for="cpf">CPF:</label>
 
-                 <input class="form__space" type="number" name="cpf" id="cpf" value="">
+                 <input class="form__space" type="number" name="cpf" id="cpf" value="{{$editara->cpf}}">
 
                  <label class ="form__label"for="rg">RG:</label>
 
-                 <input class="form__space" type="number" name="rg" id="rg" value="">
+                 <input class="form__space" type="number" name="rg" id="rg" value="{{$editara->rg}}">
 
                  <label class ="form__label"for="pais">Nome dos pais:</label>
 
-                 <input class="form__space" type="text" name="pais" id="pais" value="">
+                 <input class="form__space" type="text" name="pais" id="pais" value="{{$editara->nome_pais}}">
 
                  <button class="form__button--submit" type="submit">Editar</button>
              </form>

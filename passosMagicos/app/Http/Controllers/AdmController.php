@@ -99,10 +99,11 @@ class AdmController extends Controller
         return view('cadastro_aluna');
     }
 
-    public function listaAlunos(Request $request)
+    public function listaAlunos(Request $request)//nao ta funcionando
     {
-        $lista = Aluno::all(); //antes aqui Aluno::all()
-        return view('listaAlunos', ['lista' => $lista]);
+        $lista = Aluno::all();
+        $lista_total = User::all();
+        return view('listaAlunos', ['lista' => $lista, 'lista_total'=>$lista_total]);
         // $lista->fill($request->all());
     }
 
@@ -133,7 +134,7 @@ class AdmController extends Controller
 
         $editara->save();
 
-        return view('editaAluno');
+        return view('editaAluno',['editara'=>$editara]);
 
         //editar um aluno especifico
     }

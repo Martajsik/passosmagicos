@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+namespace App\Http\Controllers\Auth;
+
 class RegisterController extends Controller
 {
     /*

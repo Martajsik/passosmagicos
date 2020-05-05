@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de alunoes</title>
+    <title>Lista de alunos</title>
     <link rel="stylesheet" href="/css/listaAlunos.css">
+    
 </head>
 <body>
 <header>
@@ -24,14 +25,14 @@
 </header>
 <main class="content__primary">
     <div class="container">
-        <h1 class="title"> Lista de alunoes </h1>
-            {{-- @if(session('mensagem'))
+        <h1 class="title"> Lista de alunos </h1>
+            @if(session('mensagem'))
             <div class="alert alert-success"> {{session('mensagem')}}</div>
-            @endif --}}
+            @endif
             <table class="table">
-                <thead>
-                    <tr>
-                        <th>Nome</td>
+                <thead class="table__head">
+                    <tr class="table__head--gap">
+                        <th class="table__head--field">Nome</td>
                         </tr>
                     <tr>
                         <th>E-mail</td>
@@ -48,25 +49,31 @@
                         <tr>
                             <th>Contato do responsável</th>
                         </tr>
+                        <tr>
+                            <th>Ações</th>
+                        </tr>
                 </thead>
                 <tbody>
-                    @foreach($lista as $aluno)
-                        @if($aluno['tipo']==2)
+                    @foreach($lista_total as $aluno_total)
+                        @foreach($lista as $aluno)
+                            @if($aluno_total['tipo'] ==2 && $aluno_total['id'] == $aluno['user_id'])
                     <tr>
-                    <td>{{$aluno['name']}}</td>
+                    <td>{{$aluno_total['name']}}</td>
                     </tr>
 
                     <tr>
-                        <td>{{$aluno['email']}}</td>
+                        <td>{{$aluno_total['email']}}</td>
                     </tr>
 
                     <tr>
-                        <td>{{$aluno['cpf']}}</td>
+                        <td>{{$aluno_total['cpf']}}</td>
                     </tr>
 
                     <tr>
-                        <td>{{$aluno['rg']}}</td>
+                        <td>{{$aluno_total['rg']}}</td>
                     </tr>
+                    {{-- @if($aluno_total['tipo']==2) --}}
+
 
                     <tr>
                         <td>{{$aluno['nome_pais']}}</td>
@@ -75,6 +82,8 @@
                     <tr>
                         <td>{{$aluno['contato']}}</td>
                     </tr>
+
+                    {{-- @endif --}}
 
                      <form action="{{ route('excluirAluno',$aluno->id) }}" method="POST">
                     @csrf
@@ -95,6 +104,7 @@
 
                 </form>
                     @endif
+                    @endforeach
                     @endforeach
                 </tbody>
             </table>

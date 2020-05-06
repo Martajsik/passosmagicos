@@ -25,6 +25,9 @@ class AlunaController extends Controller
     {
         return view('cadastro_aluna');
     }
+     public function mostrarHome(){
+         return view('dash_aluno');
+     }
 
     /**
      * Store a newly created resource in storage.

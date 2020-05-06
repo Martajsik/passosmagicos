@@ -6,6 +6,7 @@ use App\Aluno;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdmController extends Controller
 {
@@ -21,45 +22,55 @@ class AdmController extends Controller
     }
 
 
-    // public function cadastrar(Request $request)
-    // {
+    public function cadastrar(Request $request)
+    {
+            $cadastro = $request->all();
+            $newCadastroUser = new User();
+            $newCadastroUser->fill($cadastro);
+            $newCadastroUser->tipo = 1;
+            $newCadastroUser['password'] = Hash::make($cadastro['password']);
+            $newCadastroUser->save();
+            return redirect('/adm/home');
 
-    //     $cadastro = $request->all();
+    }
 
+    public function cadastrarAluno(Request $request){
+        $cadastro = $request->all();
+        $newCadastroUser = new User();
+        $newCadastroUser->fill($cadastro);
+        $newCadastroUser['password'] = Hash::make($cadastro['password']);
+        $newCadastroUser->save();
 
-    //         $newCadastroUser = new User();
-    //         $newCadastroUser->fill($cadastro)->save();
+        if ($cadastro['tipo'] == 2) { //aluno
 
-    //      if($cadastro['tipo'] == 2) { //aluno
-
-    //         $newCadastroAluno = new Aluno();
-    //         $newCadastroAluno->nome_pais = $request->get('nome_pais');
-    //         $newCadastroAluno->contato = $request->get('contato');
-    //         $newCadastroAluno->user_id = $newCadastroUser->id;
-    //         $newCadastroAluno->save();
-    //          }
-    //         return redirect('adm/home');
-
-
-
-    // }
+            $newCadastroAluno = new Aluno();
+            $newCadastroAluno->nome_pais = $cadastro['nome_pais'];
+            $newCadastroAluno->contato = $cadastro['contato'];
+            $newCadastroAluno->user_id = $newCadastroUser->id;
+            $newCadastroAluno->save();
+        }
+        return redirect('/adm/home');
+    }
 
     public function listaProfessores(Request $request)
     {
         //logica mostrar todos os prof cadastrados no BD
-        $lista = User::all();
-        return view('listaProfessores', ['lista' => $lista]);
+        // $lista = User::all();
+        // return view('listaProfessores', ['lista' => $lista]);
+
+        $lista_total = User::all();
+        return view('listaProfessores', ['lista_total' => $lista_total]);
     }
 
     // public function listaProfessor(Request $request,$id)
     // {
 
-        // $lista->fill($request->all());
-        // $lista = $request->all();
-        // $lista->fill($lista);
-        // return view('listaProfessores', compact('lista', $lista));
+    //     $lista->fill($request->all());
+    //     $lista = $request->all();
+    //     $lista->fill($lista);
+    //     return view('listaProfessores', compact('lista', $lista));
 
-        // mostra um professor em específico no BD a partir do id dele
+    //     // mostra um professor em específico no BD a partir do id dele
 
     // }
 
@@ -95,7 +106,7 @@ class AdmController extends Controller
     {
         return view('cadastro_aluna');
     }
-    public function listaAlunos(Request $request)//nao ta funcionando...
+    public function listaAlunos(Request $request)
     {
         $lista = Aluno::all();
         $lista_total = User::all();
@@ -121,6 +132,9 @@ class AdmController extends Controller
     public function editarAluno(Request $request, $id)
     {
         $editara = Aluno::find($id);
+        $usuario = User::find($id);
+
+        if($editara['id'] == $usuario['id'])
 
         $editara->fill($request->all());
 

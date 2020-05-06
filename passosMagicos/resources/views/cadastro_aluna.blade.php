@@ -12,7 +12,7 @@
 <body>
 
 
-    <form class="box" action="{{ route('register') }}" method="POST">
+    <form class="box" action="{{ route('cadastro.aluno') }}" method="POST">
         @csrf
         @if ($errors->any())
     <div class="alert alert-danger">

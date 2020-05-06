@@ -25,9 +25,9 @@
 <main class="content__primary">
     <div class="container">
         <h1 class="title"> Lista de Professores </h1>
-            {{-- @if(session('mensagem'))
+            @if(session('mensagem'))
             <div class="alert alert-success"> {{session('mensagem')}}</div>
-            @endif --}}
+            @endif
             <table class="table">
                 <thead>
                     <tr>
@@ -44,8 +44,8 @@
                         </tr>
                 </thead>
                 <tbody>
-                    @foreach($lista as $professor)
-                        @if($professor['tipo']==1)
+                    @foreach($lista_total as $professor)
+                        @if($professor['tipo'] == 1)
                     <tr>
                     <td>{{$professor['name']}}</td>
                     </tr>
@@ -81,7 +81,7 @@
 
                 </form>
                     @endif
-                    @endforeach
+                @endforeach
                 </tbody>
             </table>
             <div class="botoes">

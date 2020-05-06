@@ -24,7 +24,7 @@ class ProfessorController extends Controller
     public function listaAlunos(Request $request){
         $lista = Aluno::all();
         $lista_total = User::all();
-        return view('listaAlunos', ['lista' => $lista, 'lista_total' => $lista_total]);
+        return view('professor.alunos', ['lista' => $lista, 'lista_total' => $lista_total]);
     }
 
     public function mostrarNotas(){
@@ -56,7 +56,7 @@ class ProfessorController extends Controller
     }
 
     public function subirAnotacoes(Request $request){
-        
+
     }
 
     /**

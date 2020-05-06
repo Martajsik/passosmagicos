@@ -15,11 +15,6 @@
 <h2>Cadastro Professores</h2>
 
     <div class="campo">
-      <label for="tipo">Código de cadastro:</label>
-      <input type="text" class="caixa" name="tipo">
-    </div>
-
-    <div class="campo">
         <label for="name">Nome Completo:</label>
         <input class="caixa" type="text" name="name" id="nome">
     </div>

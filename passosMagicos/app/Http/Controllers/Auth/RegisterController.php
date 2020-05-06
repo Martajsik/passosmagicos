@@ -69,19 +69,19 @@ class RegisterController extends Controller
      */
     protected function create(array $cadastro)
     {
-        $newCadastroUser = new User();
-        $newCadastroUser->fill($cadastro);
-        $newCadastroUser['password'] = Hash::make($cadastro['password']);
-        $newCadastroUser->save();
+        // $newCadastroUser = new User();
+        // $newCadastroUser->fill($cadastro);
+        // $newCadastroUser['password'] = Hash::make($cadastro['password']);
+        // $newCadastroUser->save();
 
-        if ($cadastro['tipo'] == 2) { //aluno
+        // if ($cadastro['tipo'] == 2) { //aluno
 
-            $newCadastroAluno = new Aluno();
-            $newCadastroAluno->nome_pais = $cadastro['nome_pais'];
-            $newCadastroAluno->contato = $cadastro['contato'];
-            $newCadastroAluno->user_id = $newCadastroUser->id;
-            $newCadastroAluno->save();
-        }
-        return $newCadastroUser;
+        //     $newCadastroAluno = new Aluno();
+        //     $newCadastroAluno->nome_pais = $cadastro['nome_pais'];
+        //     $newCadastroAluno->contato = $cadastro['contato'];
+        //     $newCadastroAluno->user_id = $newCadastroUser->id;
+        //     $newCadastroAluno->save();
+        // }
+        // return $newCadastroUser;
     }
 }

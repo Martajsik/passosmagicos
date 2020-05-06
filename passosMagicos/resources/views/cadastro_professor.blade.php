@@ -11,6 +11,7 @@
 <body>
 <form name="form" action="{{route('cadastro')}}" method="post" >
     @csrf
+    @method('POST')
 <h2>Cadastro Professores</h2>
 
     <div class="campo">
@@ -78,5 +79,5 @@
 <script src="/js/viaCep.js"></script>
 <script src="/js/jquery.mask.js"></script>
 <script src="/js/mascara.js"></script>
-</body>  
+</body>
 </html>

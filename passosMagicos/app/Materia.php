@@ -21,12 +21,12 @@ class Materia extends Model
 
     public function prof_materia()
     {
-        return $this->hasone(Prof_materia::class);
+        return $this->hasone(ProfMateria::class);
     }
 
     public function aluno_tarefa()
     {
-        return $this->hasone(Aluno_tarefa::class);
+        return $this->hasone(AlunoTarefa::class);
     }
 
     public function tarefas()
@@ -36,21 +36,21 @@ class Materia extends Model
 
     public function aluno_materia_observacao()
     {
-        return $this->hasone(Aluno_materia_observacao::class);
+        return $this->hasone(AlunoMateriaObservacao::class);
     }
 
-    public function aluno_materia()
-    {
-        return $this->hasone(Aluno_materia::class);
-    }
+    // public function aluno_materia()
+    // {
+    //     return $this->hasone(AlunoMateria::class);
+    // }
 
     public function aluno_materia_presenca()
     {
-        return $this->hasMany(Aluno_materia_presenca::class);
+        return $this->hasMany(AlunoMateriaPresenca::class);
     }
 
     public function aluno_materia_nota()
     {
-        return $this->hasMany(Aluno_materia_nota::class);
+        return $this->hasMany(AlunoMateriaNota::class);
     }
 }

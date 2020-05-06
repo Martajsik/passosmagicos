@@ -22,21 +22,12 @@
         <label for="name">Nome Completo:</label>
         <input class="caixa" type="text" name="name" id="nome">
     </div>
-    {{-- <div class="campo">
-        <label for="snome">Sobrenome:</label>
-        <input class="caixa" type="text" name="snome" id="snome">
-    </div> --}}
-
     <div class="email">
-    <label for="email">E-mail:</label>
+        <label for="email">E-mail:</label>
             <input class="caixa" type="text" id="email" name="email"  value="" placeholder=>
     </div>
     <div class="emails">
     </div>
-    {{-- <div class="campo">
-    <label for="telefone">Telefone:</label>
-            <input class="caixa" type="text" id="telefone" name="telefone" value="">
-    </div> --}}
     <div class="campo">
       <label for="password">Senha:</label>
       <input type="password" class="caixa" name="password">
@@ -87,5 +78,5 @@
 <script src="/js/viaCep.js"></script>
 <script src="/js/jquery.mask.js"></script>
 <script src="/js/mascara.js"></script>
-</body>
+</body>  
 </html>

@@ -11,7 +11,7 @@ class AdmController extends Controller
 {
     public function mostrarHome()
     {
-        return view('homeAdm'); //precisa ser criada
+        return view('homeAdm');
     }
 
 
@@ -51,8 +51,8 @@ class AdmController extends Controller
         return view('listaProfessores', ['lista' => $lista]);
     }
 
-    public function listaProfessor(Request $request,$id)
-    {
+    // public function listaProfessor(Request $request,$id)
+    // {
 
         // $lista->fill($request->all());
         // $lista = $request->all();
@@ -61,7 +61,7 @@ class AdmController extends Controller
 
         // mostra um professor em específico no BD a partir do id dele
 
-    }
+    // }
 
     public function editaProfessor($id)
     {
@@ -95,12 +95,11 @@ class AdmController extends Controller
     {
         return view('cadastro_aluna');
     }
-
-    public function listaAlunos(Request $request)//nao ta funcionando
+    public function listaAlunos(Request $request)//nao ta funcionando...
     {
         $lista = Aluno::all();
         $lista_total = User::all();
-        return view('listaAlunos', ['lista' => $lista, 'lista_total'=>$lista_total]);
+        return view('listaAlunos', ['lista' => $lista], ['lista_total'=>$lista_total]);
         // $lista->fill($request->all());
     }
 

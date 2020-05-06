@@ -15,7 +15,7 @@ Route::group(['prefix' => '/'], function () {
 
         Route::group(['prefix' => '/professor'], function () {
             Route::get('/cadastro', 'AdmController@cadastroProfessor'); //mostra a view cadastro
-            Route::post('/cadastro', 'Auth\RegisterController@create')->name('cadastro'); //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
+            Route::post('/cadastro', 'Auth\RegisterController@register')->name('cadastro'); //efetua o cadastro(serve tanto p aluno como prof,vai ser a msm função do controller)
 
             Route::get('/lista', 'AdmController@listaProfessores')->name('listaProf'); //mostra a lista de professores
 
@@ -62,7 +62,7 @@ Route::group(['prefix' => '/'], function () {
     });
 
     Route::group(['prefix' => 'aluno'], function () {
-        Route::get('/home','AlunoController@mostrarHome')->name('aluno.home');
+        Route::get('/home','AlunaController@mostrarHome')->name('aluno.home');
     });
 
 

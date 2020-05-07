@@ -30,7 +30,7 @@
         </header>
         <section id="header">
             <div class="container">
-                <img src="images/logon.png" class="logo" alt="">
+                <img src="/passosMagicos/public/images/logon.png" class="logo" alt="">
                 <div class="header-text">
                     <h1> Seja bem vindo a
                         plataforma de ensino Passos magicos</h1>
@@ -79,11 +79,11 @@
             </li> -->
             </ul>
         </nav>
-        <img src="/passosMagicos/public/storage/images/menu.png" id="menuBtn">
+        <img src="/passosMagicos/public/images/menu.png" id="menuBtn">
 
         <section id="about">
             <div class="about-left-col">
-                <img src="images/about.png" alt="">
+                <img src="/passosMagicos/public/images/about.png" alt="">
 
             </div>
             <div class="about-right-col">

@@ -11,7 +11,7 @@
     <section id="about">
 		<div class="cobertura">
 			<div class="about-left-col">
-				<img src="/passosMagicos/public/storage/images/offer.png" alt="">
+				<img src="/passosMagicos/public/images/offer.png" alt="">
 
 			</div>
 			<div class="about-right-col">

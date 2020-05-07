@@ -109,10 +109,9 @@ class AdmController extends Controller
     }
     public function listaAlunos(Request $request)
     {
-        $lista = Aluno::all();
-        $lista_total = User::all();
-        return view('listaAlunos', ['lista' => $lista, 'lista_total' => $lista_total]);
-        // $lista->fill($request->all());
+        $lista_alunos = Aluno::all();
+        $lista_users = User::all();
+        return view('listaAlunos', ['lista_alunos' => $lista_alunos], ['lista_users' => $lista_users]);
     }
 
     public function listaAluno($id)
@@ -125,25 +124,26 @@ class AdmController extends Controller
 
     public function editaAluno($id)
     {
-        //logica se o aluno existe no BD ou nao. Aparecer o nome dele.
-        return view('editaAluno');
-        //precisa fazer essa view
+        return view('adm.aluno.edita');
     }
 
     public function editarAluno(Request $request, $id)
     {
         $editara = Aluno::find($id);
-        $usuario = User::find($id);
+        $editaraUserId = $editara['user_id'];
+        $usuario = User::find($editaraUserId);
 
-        if (($editara['id'] == $usuario['id']) && ($editara['tipo'] == $usuario['tipo'])){
+        $editara->fill($request->all());
+        $usuario->fill($request->all());
+        $usuario->save();
+        $editara->save();
 
-            $editara->fill($request->all());
-            $editara->save();
 
-
-        return view('editaAluno', ['editara' => $editara, 'usuario'=>$usuario]);
+        return view('listaAlunos', [
+            'editara' => $editara, 'usuario' => $usuario
+        ]);
         //editar um aluno especifico
-        }
+        // }
     }
 
     public function excluirAluno($id)

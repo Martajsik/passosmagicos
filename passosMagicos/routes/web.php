@@ -36,7 +36,7 @@ Route::group(['prefix' => '/'], function () {
 
             Route::get('/{id}', 'AdmController@listaAluno'); //mostra um aluno em especifico
 
-            Route::get('/{id}/editar', 'AdmController@editaAluno'); //mostra a view de editar prof especifico
+            Route::get('/{id}/editar', 'AdmController@editaAluno')->name('adm.aluno.edita'); //mostra a view de editar prof especifico
             Route::post('/{id}/editar', 'AdmController@editarAluno')->name('editaAluno'); //efetua a edicao do prof especifico
 
             Route::delete('/{id}/excluir', 'AdmController@excluirAluno')->name('excluirAluno'); //efetua a exclusão

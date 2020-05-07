@@ -54,25 +54,11 @@ class AdmController extends Controller
 
     public function listaProfessores(Request $request)
     {
-        //logica mostrar todos os prof cadastrados no BD
-        // $lista = User::all();
-        // return view('listaProfessores', ['lista' => $lista]);
-
         $lista_total = User::all();
         return view('listaProfessores', ['lista_total' => $lista_total]);
     }
 
-    // public function listaProfessor(Request $request,$id)
-    // {
 
-    //     $lista->fill($request->all());
-    //     $lista = $request->all();
-    //     $lista->fill($lista);
-    //     return view('listaProfessores', compact('lista', $lista));
-
-    //     // mostra um professor em específico no BD a partir do id dele
-
-    // }
 
     public function editaProfessor($id)
     {
@@ -111,7 +97,7 @@ class AdmController extends Controller
     {
         $lista_alunos = Aluno::all();
         $lista_users = User::all();
-        return view('listaAlunos', ['lista_alunos' => $lista_alunos], ['lista_users' => $lista_users]);
+        return view('listaAlunos', ['lista_alunos' => $lista_alunos,'lista_users' => $lista_users]);
     }
 
     public function listaAluno($id)

@@ -94,7 +94,7 @@
                         </td>
                     </tr>
                 </form>
-                    <form action="{{ route('editaAluno',$aluno->id) }}" method="post">
+                    <form action="{{ route( 'editaAluno' , $aluno->id) }}" method="post">
                     @csrf
                     <tr>
                         <td>

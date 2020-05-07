@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista de alunos</title>
     <link rel="stylesheet" href="/css/listaAlunos.css">
-    
+
 </head>
 <body>
 <header>
@@ -54,25 +54,25 @@
                         </tr>
                 </thead>
                 <tbody>
-                    @foreach($lista_total as $aluno_total)
-                        @foreach($lista as $aluno)
-                            @if($aluno_total['tipo'] ==2 && $aluno_total['id'] == $aluno['user_id'])
+                    @foreach($lista_users as $user)
+                        @foreach($lista_alunos as $aluno)
+                            @if($user['tipo'] ==2 && $user['id'] == $aluno['user_id'])
                     <tr>
-                    <td>{{$aluno_total['name']}}</td>
+                    <td>{{$user['name']}}</td>
                     </tr>
 
                     <tr>
-                        <td>{{$aluno_total['email']}}</td>
+                        <td>{{$user['email']}}</td>
                     </tr>
 
                     <tr>
-                        <td>{{$aluno_total['cpf']}}</td>
+                        <td>{{$user['cpf']}}</td>
                     </tr>
 
                     <tr>
-                        <td>{{$aluno_total['rg']}}</td>
+                        <td>{{$user['rg']}}</td>
                     </tr>
-                    {{-- @if($aluno_total['tipo']==2) --}}
+                    {{-- @if($user['tipo']==2) --}}
 
 
                     <tr>
@@ -94,7 +94,7 @@
                         </td>
                     </tr>
                 </form>
-                     <form action="{{ route('editaAluno',$aluno->id) }}" method="post">
+                    <form action="{{ route( 'editaAluno' , $aluno->id) }}" method="post">
                     @csrf
                     <tr>
                         <td>

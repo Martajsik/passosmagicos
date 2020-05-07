@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use App\AlunoMateriaNota;
+use App\Materia as AppMateria;
 use App\User;
 use Illuminate\Http\Request;
+use Materia;
 
 class ProfessorController extends Controller
 {
@@ -17,6 +20,10 @@ class ProfessorController extends Controller
     {
         return view('dash_prof');
     }
+    public function mostrarProfessor($id){ //verificar
+        $professor = User::find($id);
+        return redirect('professor.home',['professor'=>$professor]);
+    }
 
     public function listaTurmas(Request $request){
 
@@ -24,19 +31,21 @@ class ProfessorController extends Controller
     public function listaAlunos(Request $request){
         $lista = Aluno::all();
         $lista_total = User::all();
-        return view('professor.alunos', ['lista' => $lista, 'lista_total' => $lista_total]);
+        return redirect('professor.alunos', ['lista' => $lista, 'lista_total' => $lista_total]);
+        //so copiar a estrutura do listaAlunos e tirar o botao
     }
 
     public function mostrarNotas(){
-       //controller do aluno
+        $lista_notas = AlunoMateriaNota::all();
+        return redirect('professor.notas');
     }
 
-    public function subirNotas(){
+    public function subirNotas(Request $request){
         //form com notas de cada aluno
     }
 
     public function listaTarefas(Request $request){
-        //controller do aluno
+
     }
 
     public function subirTarefas(Request $request){
@@ -52,11 +61,16 @@ class ProfessorController extends Controller
     }
 
     public function listaAnotacoes(Request $request){
-        //no controller aluno
+
     }
 
     public function subirAnotacoes(Request $request){
 
+    }
+
+    public function listarMaterias(Request $request){
+        $materias = AppMateria::all();
+        return redirect('professor.materias',['materias'=>$materias]);
     }
 
     /**

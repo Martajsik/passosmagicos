@@ -10,15 +10,7 @@ use App\Prof_materia;
 class Unidade extends Model
 {
     //
-    protected $fillable = [
-        "cnpj",
-        "rua",
-        "numero",
-        "bairro",
-        "cep",
-        "cidade",
-        "uf"
-    ];
+    protected $fillable = ["nome"];
 
     public function aluno_tarefa(){
         return $this-> hasone(AlunoTarefa::class);

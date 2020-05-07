@@ -23,8 +23,8 @@ class CreateMateriaTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('nome_materia', 45);
-            $table->string('ano', 45);
+            $table->string('nome_materia');
+            $table->string('ano');
         });
     }
 

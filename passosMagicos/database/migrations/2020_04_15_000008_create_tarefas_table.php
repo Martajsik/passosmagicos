@@ -23,7 +23,7 @@ class CreateTarefasTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('descricao', 45);
+            $table->string('descricao');
             $table->dateTime('data');
             $table->integer('unidades_id')->unsigned();
             $table->integer('materia_id')->unsigned();

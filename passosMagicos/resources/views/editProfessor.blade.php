@@ -13,7 +13,7 @@
     <nav class="nav">
 
         <div class="nav__infos">
-            <h1 class="nav__infos--title">Editar professor </h1>
+            <h1 class="nav__infos--title">Editar professor {{ $editar['name'] }} </h1>
         </div>
 
         <div class="nav__list">
@@ -43,19 +43,22 @@
 
                  <input class="form__space" type="email" name="email-verify" id="email-verify" value="">
 
-                 <label class ="form__label" for="cpf">CPF:</label>
+                 <label class ="form__label " for="cpf">CPF:</label>
 
-                 <input class="form__space" type="number" name="cpf" id="cpf" value="{{$editar->cpf}}">
+                 <input class="form__space cpf" type="text" name="cpf" id="cpf" value="{{$editar->cpf}}">
 
-                 <label class ="form__label" for="rg">RG:</label>
+                 <label class ="form__label rg" for="rg">RG:</label>
 
-                 <input class="form__space" type="number" name="rg" id="rg" value="{{$editar->rg}}">
+                 <input class="form__space rg" type="text" name="rg" id="rg" value="{{$editar->rg}}">
 
                  <button class="form__button--submit" type="submit" name="editar">Editar</button>
              </form>
      </section>
 
 </main>
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="/js/jquery.mask.js"></script>
+<script src="/js/mascara.js"></script>
 
 </body>
 </html>

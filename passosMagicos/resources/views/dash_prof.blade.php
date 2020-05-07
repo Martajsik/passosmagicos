@@ -14,10 +14,10 @@
         <div class="logo">
             <img src="/storage/img/dash_prof2.jpeg" alt="">
         </div>
-
+        {{-- {{$professor->nome}} --}}
         <nav>
             <ul class="nav_links">
-                <span class="saudacao">Seja bem vindo, professor!</span>
+            <span class="saudacao">Seja bem vindo, professor!</span>
                 <li><a href="adm">home</a></li>
                 <li><a href="/professor/professor/edit">atualização de info</a></li>
                 <li><a href="#">sair</a></li>

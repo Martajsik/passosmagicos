@@ -23,7 +23,7 @@ class CreateAlunoMateriaNotasTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('periodo', 45);
+            $table->string('periodo');
             $table->float('nota');
             $table->integer('user_id')->unsigned();
             $table->integer('materia_id')->unsigned();

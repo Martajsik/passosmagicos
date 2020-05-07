@@ -12,7 +12,7 @@
     <nav class="nav">
 
         <div class="nav__infos">
-            <h1 class="nav__infos--title">Editar Aluno </h1>
+        <h1 class="nav__infos--title">Editar Aluno {{$editara['name']}}</h1>
         </div>
 
         <div class="nav__list">
@@ -32,11 +32,11 @@
 
                  <label class ="form__label"for="name">Nome Completo:</label>
 
-                 <input class="form__space" type="text" name="name" id="name" value="{{$editara->name}}">
+                 <input class="form__space" type="text" name="name" id="name" value="{{$usuario->name}}">
 
                  <label class ="form__label"for="email">E-mail:</label>
 
-                 <input class="form__space" type="email" name="email" id="email" value="{{$editara->email}}">
+                 <input class="form__space" type="email" name="email" id="email" value="{{$usuario->email}}">
 
                  <label class ="form__label"for="email-verify">Confirmar e-mail:</label>
 
@@ -44,11 +44,11 @@
 
                  <label class ="form__label"for="cpf">CPF:</label>
 
-                 <input class="form__space" type="number" name="cpf" id="cpf" value="{{$editara->cpf}}">
+                 <input class="form__space cpf" type="text" name="cpf" id="cpf" value="{{$usuario->cpf}}">
 
                  <label class ="form__label"for="rg">RG:</label>
 
-                 <input class="form__space" type="number" name="rg" id="rg" value="{{$editara->rg}}">
+                 <input class="form__space rg" type="text" name="rg" id="rg" value="{{$usuario->rg}}">
 
                  <label class ="form__label"for="pais">Nome dos pais:</label>
 
@@ -59,5 +59,9 @@
      </section>
 
 </main>
+
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="/js/jquery.mask.js"></script>
+<script src="/js/mascara.js"></script>
 </body>
 </html>

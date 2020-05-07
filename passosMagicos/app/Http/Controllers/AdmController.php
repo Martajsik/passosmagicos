@@ -24,17 +24,17 @@ class AdmController extends Controller
 
     public function cadastrar(Request $request)
     {
-            $cadastro = $request->all();
-            $newCadastroUser = new User();
-            $newCadastroUser->fill($cadastro);
-            $newCadastroUser->tipo = 1;
-            $newCadastroUser['password'] = Hash::make($cadastro['password']);
-            $newCadastroUser->save();
-            return redirect('/adm/home');
-
+        $cadastro = $request->all();
+        $newCadastroUser = new User();
+        $newCadastroUser->fill($cadastro);
+        $newCadastroUser->tipo = 1;
+        $newCadastroUser['password'] = Hash::make($cadastro['password']);
+        $newCadastroUser->save();
+        return redirect('/adm/professor/lista');
     }
 
-    public function cadastrarAluno(Request $request){
+    public function cadastrarAluno(Request $request)
+    {
         $cadastro = $request->all();
         $newCadastroUser = new User();
         $newCadastroUser->fill($cadastro);
@@ -49,7 +49,7 @@ class AdmController extends Controller
             $newCadastroAluno->user_id = $newCadastroUser->id;
             $newCadastroAluno->save();
         }
-        return redirect('/adm/home');
+        return redirect('/adm/aluno/lista');
     }
 
     public function listaProfessores(Request $request)
@@ -97,8 +97,9 @@ class AdmController extends Controller
         //excluir do banco de dados
         $excluir = User::findOrFail($id);
         $excluir->delete();
+        return redirect('/adm/professor/lista');
 
-        return view('listaProfessores', ['lista' => $excluir]);
+        //return redirect('listaProfessores', ['excluir' => $excluir]);
         //testar o redirect
     }
 
@@ -110,7 +111,7 @@ class AdmController extends Controller
     {
         $lista = Aluno::all();
         $lista_total = User::all();
-        return view('listaAlunos', ['lista' => $lista], ['lista_total'=>$lista_total]);
+        return view('listaAlunos', ['lista' => $lista, 'lista_total' => $lista_total]);
         // $lista->fill($request->all());
     }
 
@@ -134,15 +135,15 @@ class AdmController extends Controller
         $editara = Aluno::find($id);
         $usuario = User::find($id);
 
-        if($editara['id'] == $usuario['id'])
+        if (($editara['id'] == $usuario['id']) && ($editara['tipo'] == $usuario['tipo'])){
 
-        $editara->fill($request->all());
+            $editara->fill($request->all());
+            $editara->save();
 
-        $editara->save();
 
-        return view('editaAluno',['editara'=>$editara]);
-
+        return view('editaAluno', ['editara' => $editara, 'usuario'=>$usuario]);
         //editar um aluno especifico
+        }
     }
 
     public function excluirAluno($id)
@@ -150,8 +151,9 @@ class AdmController extends Controller
 
         $excluira = Aluno::findOrFail($id);
         $excluira->delete();
+        return redirect('/adm/aluno/lista');
 
-        return view('editaAluno');
+        //return view('editaAluno');
         //excluir do banco de dados
     }
 }

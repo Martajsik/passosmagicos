@@ -23,14 +23,8 @@ class CreateUnidadesTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('cnpj');
-            $table->string('rua', 45);
-            $table->string('numero', 45);
-            $table->string('bairro', 45);
-            $table->integer('cep');
-            $table->string('cidade', 45);
-            $table->string('uf', 45);
-        });
+            $table->string('nome')->nullable();
+         });
     }
 
     /**

@@ -46,17 +46,24 @@ Route::group(['prefix' => '/'], function () {
 
     Route::group(['prefix' => 'professor'], function () {
         Route::get('/home','ProfessorController@home')->name('professor.home');
-        Route::get('/home/lista/turmas','ProfessorController@listaTurmas')->name('professor.turmas');//ver a situação
-        Route::get('/home/lista/alunos','ProfessorController@listaAlunos')->name('professor.alunos');
+        Route::get('/home/{id}', 'ProfessorController@mostrarProfessor')->name('professor.show');//verificar
 
-        Route::get('/home/notas','ProfessorController@mostrarNotas')->name('professor.notas');
-        Route::post('/home/{id}/notas','ProfessorController@subirNotas')->name('professor.subirNotas');
-        Route::get('/home/tarefas','ProfessorController@listaTarefas')->name('professor.tarefas');
-        Route::post('/home/tarefas','ProfessorController@subirTarefas')->name('professor.subirTarefas');//vai redirecionar p home notas. Na action do form poe as urls
-        Route::get('/home/presenca','ProfessorController@listaPresenca')->name('professor.listaPresenca');
-        Route::post('/home/presenca','ProfessorController@subirPresenca')->name('professor.subirPresenca');
-        Route::get('/home/anotacoes','ProfessorController@listaAnotacoes')->name('professor.listaAnotacoes');
-        Route::post('/home/anotacoes','ProfessorController@subirAnotacoes')->name('professor.subirAnotacoes');
+        Route::get('/home/lista/turmas','ProfessorController@listaTurmas')->name('professor.turmas'); //ver a situação
+        Route::get('/home/materias', 'ProfessorController@listarMaterias')->name('professor.materias');
+
+        Route::get('/home/materias/alunos','ProfessorController@listaAlunos')->name('professor.alunos');
+
+        Route::get('/home/materias/notas','ProfessorController@mostrarNotas')->name('professor.notas');
+        Route::post('/home/materias/{id}/notas','ProfessorController@subirNotas')->name('professor.subirNotas');
+
+        Route::get('/home/materias/tarefas','ProfessorController@listaTarefas')->name('professor.tarefas');
+        Route::post('/home/materias/{id}/tarefas','ProfessorController@subirTarefas')->name('professor.subirTarefas');//vai redirecionar p home notas. Na action do form poe as urls
+        Route::get('/home/materias/{id}/presenca','ProfessorController@listaPresenca')->name('professor.listaPresenca');
+        Route::post('/home/materias/{id}/presenca','ProfessorController@subirPresenca')->name('professor.subirPresenca');
+        Route::get('/home/materias/{id}/anotacoes','ProfessorController@listaAnotacoes')->name('professor.listaAnotacoes');
+        Route::post('/home/materias/{id}/anotacoes','ProfessorController@subirAnotacoes')->name('professor.subirAnotacoes');
+
+
 
 
     });

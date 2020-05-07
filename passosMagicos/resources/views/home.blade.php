@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Passos magicos</title>
-        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="/css/home.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-        
+
 
     </head>
 
@@ -30,7 +30,7 @@
         </header>
         <section id="header">
             <div class="container">
-                <img src="/passosMagicos/public/images/logon.png" class="logo" alt="">
+                <img src="/images/logon.png" class="logo" alt="">
                 <div class="header-text">
                     <h1> Seja bem vindo a
                         plataforma de ensino Passos magicos</h1>
@@ -79,11 +79,11 @@
             </li> -->
             </ul>
         </nav>
-        <img src="/passosMagicos/public/images/menu.png" id="menuBtn">
+        <img src="/images/menu.png" id="menuBtn">
 
         <section id="about">
             <div class="about-left-col">
-                <img src="/passosMagicos/public/images/about.png" alt="">
+                <img src="/images/about.png" alt="">
 
             </div>
             <div class="about-right-col">

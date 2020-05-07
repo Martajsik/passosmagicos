@@ -6,7 +6,7 @@
 
 #header{
     height: 100vh;
-    background-image: url(/passosMagicos/public/storage/images/background.png); 
+    background-image: url(/images/background.png);
     background-position: center;
     background-size: cover;
 }
@@ -151,7 +151,7 @@ nav ul li a{
     background-image: linear-gradient(to bottom,
             rgba(10, 10, 10, 0) 0%,
             rgba(10, 10, 10, 0) 50%,
-            rgba(10, 10, 10, 0.7) 100%), url('/passosMagicos/public/storage/images/desk-office-pen-ruler.jpg');
+            rgba(10, 10, 10, 0.7) 100%), url('/images/desk-office-pen-ruler.jpg');
 }
 
 #about{

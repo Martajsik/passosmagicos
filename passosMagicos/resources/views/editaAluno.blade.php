@@ -12,7 +12,7 @@
     <nav class="nav">
 
         <div class="nav__infos">
-        <h1 class="nav__infos--title">Editar Aluno {{$editara['name']}}</h1>
+        <h1 class="nav__infos--title">Editar Aluno {{$usuario->name}}</h1>
         </div>
 
         <div class="nav__list">

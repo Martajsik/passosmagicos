@@ -33,32 +33,11 @@ class AdmController extends Controller
         return redirect('/adm/professor/lista');
     }
 
-    public function cadastrarAluno(Request $request)
-    {
-        $cadastro = $request->all();
-        $newCadastroUser = new User();
-        $newCadastroUser->fill($cadastro);
-        $newCadastroUser['password'] = Hash::make($cadastro['password']);
-        $newCadastroUser->save();
-
-        if ($cadastro['tipo'] == 2) { //aluno
-
-            $newCadastroAluno = new Aluno();
-            $newCadastroAluno->nome_pais = $cadastro['nome_pais'];
-            $newCadastroAluno->contato = $cadastro['contato'];
-            $newCadastroAluno->user_id = $newCadastroUser->id;
-            $newCadastroAluno->save();
-        }
-        return redirect('/adm/aluno/lista');
-    }
-
     public function listaProfessores(Request $request)
     {
         $lista_total = User::all();
         return view('listaProfessores', ['lista_total' => $lista_total]);
     }
-
-
 
     public function editaProfessor($id)
     {
@@ -93,6 +72,26 @@ class AdmController extends Controller
     {
         return view('cadastro_aluna');
     }
+
+    public function cadastrarAluno(Request $request)
+    {
+        $cadastro = $request->all();
+        $newCadastroUser = new User();
+        $newCadastroUser->fill($cadastro);
+        $newCadastroUser['password'] = Hash::make($cadastro['password']);
+        $newCadastroUser->save();
+
+        if ($cadastro['tipo'] == 2) { //aluno
+
+            $newCadastroAluno = new Aluno();
+            $newCadastroAluno->nome_pais = $cadastro['nome_pais'];
+            $newCadastroAluno->contato = $cadastro['contato'];
+            $newCadastroAluno->user_id = $newCadastroUser->id;
+            $newCadastroAluno->save();
+        }
+        return redirect('/adm/aluno/lista');
+    }
+
     public function listaAlunos(Request $request)
     {
         $lista_alunos = Aluno::all();
@@ -125,7 +124,7 @@ class AdmController extends Controller
         $editara->save();
 
 
-        return view('listaAlunos', [
+        return view('editaAluno', [
             'editara' => $editara, 'usuario' => $usuario
         ]);
         //editar um aluno especifico

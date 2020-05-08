@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="/css/cadastroprof.css">
 </head>
 <body>
-<!-- <form name="form" action="{{route('cadastro')}}" method="post" >
-    @csrf
-    @method('POST')
-    <a class="link" href="/adm/professor/lista">Voltar</a>
-<h2 class="titulo__h2">Cadastro Professores</h2> -->
+
 
 <section id="about">
 		<div class="cobertura">
@@ -23,14 +19,17 @@
 			</div>
 			<div class="about-right-col">
 				<div class="login-content">
-					<form action="index.html">
-						<h3 class="title">Cadastro</h3>
+					<form name="form" action="{{route('cadastro')}}" method="post">
+                @csrf
+                @method('POST')
+                        <h3 class="title">Cadastro</h3>
+                         <a class="link" href="/adm/professor/lista">Voltar</a>
 						<div class="input-div one">
 							<div class="i">
 								<i class="fas fa-user"></i>
 							</div>
 							<div class="div">
-								<input type="text" placeholder="Nome completo" class="input">
+								<input type="text" placeholder="Nome completo" class="input" name="name">
 							</div>
 						</div>
 						<div class="input-div one">
@@ -102,7 +101,7 @@
 								<i class="fas fa-user"></i>
 							</div>
 							<div class="div">
-								<input type="text" placeholder="bairro" class="input">
+								<input type="text" placeholder="bairro" class="input" id="bairro">
 							</div>
 						</div>
 						<div class="input-div one">

@@ -17,7 +17,7 @@
 			<div class="about-right-col">
 				<div class="login-content">
 					<form action="" method="POST">
-                    @csrf
+                        @csrf
 						<h2 class="title">Login</h2>
 						<div class="input-div one">
 							<div class="i">
@@ -44,7 +44,10 @@
 			</div>
 		</div>
 	</section>
-        <form class="box" action="" method="POST">
+    
+
+
+    <form class="box" action="" method="POST">
             @csrf
             <a href="{{route('homeAdm')}}">AREA ADM</a>
         </form>

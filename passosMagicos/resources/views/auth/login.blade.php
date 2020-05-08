@@ -26,7 +26,12 @@
 							</div>
 							<div class="div">
 								<!-- <h5>Username</h5> -->
-								<input type="text" placeholder="usuario" class="input">
+                                <input type="text" placeholder="usuario" class="input"  name="email">
+                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 							</div>
 						</div>
 						<div class="input-div pass">
@@ -35,11 +40,23 @@
 							</div>
 							<div class="div">
 								<!-- <h5>Password</h5> -->
-								<input type="password" placeholder="Senha" class="input">
+                                <input type="password" placeholder="Senha" class="input" name="password">
+                                 @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 							</div>
-						</div>
-						<a href="#">Esqueceu sua senha?</a>
-						<input type="submit" class="btn" value="Entra">
+                        </div>
+                        {{-- @if (Route::has('password.request'))
+						<a href="{{ route('password.request') }}">Esqueceu sua senha?</a>
+                        <input type="submit" class="btn" value="Entra"> --}}
+                         <input type="submit" class="btn" value="Entrar">
+                        @if (Route::has('password.request'))
+                            <a class="btn " href="{{ route('password.request') }}">
+                                {{ __('Esqueceu sua senha?') }}
+                            </a>
+                        @endif
 					</form>
 				</div>
 			</div>

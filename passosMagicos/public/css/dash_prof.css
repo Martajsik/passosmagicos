@@ -86,15 +86,143 @@ button {
     color: #f67c92;
 }
 
+#about {
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-left-col {
+    flex-basis: 50%;
+}
+
+.about-left-col img {
+    width: 100%;
+}
+
+.feed {
+    display: flex;
+    margin-top: 25px;
+    flex-basis: 50%;
+    margin-left: 2px;
+
+}
+
+.card-1 {
+    border-radius: 5px;
+    display: flex;
+    padding: 20px;
+    transition: all .3s ease;
+    height: 250px;
+    width: 200px;
+    margin-left: 15px;
+    margin-top: auto;
+    box-shadow: 0px 0px 5px 5px #dfe6e9;
+}
+
+.card-1:hover {
+    cursor: pointer;
+    box-shadow: 13px 10px 16px -6px rgba(246, 124, 146, 1);
+    transform: scale(1.02);
+}
+
+.card-2 {
+    background-color: #f5f6fa;
+}
+
+.card-2 {
+    border-radius: 5px;
+    display: flex;
+    padding: 20px;
+    transition: all .3s ease;
+    height: 250px;
+    width: 415px;
+    margin-left: 15px;
+    margin-top: auto;
+    box-shadow: 0px 0px 5px 5px #dfe6e9;
+}
+
+.card-2:hover {
+    cursor: pointer;
+    box-shadow: 13px 10px 16px -6px rgba(246, 124, 146, 1);
+    transform: scale(1.02);
+}
+
+.card-1 {
+    background-color: #f67c92;
+}
+
+h3 {
+    color: gray;
+}
+
+.about-left-col {
+    flex-basis: 50%;
+}
+
+.about-left-col img {
+    width: 100%;
+}
+
+.about-right-col {
+    flex-basis: 50%;
+    text-align: right;
+}
+
+.about-text {
+    max-width: 500px;
+    margin-right: 100PX;
+    display: inline-block;
+}
+
+.about-text h2 {
+    margin: 50px 0 10px;
+    font-size: 28px;
+    font-style: italic;
+}
+
+.about-text h3 {
+    font-size: 20px;
+    font-style: italic;
+    color: #797979;
+}
+
+.line1 {
+    width: 15px;
+    height: 15px;
+    background-color: #f67c92;
+    display: inline-block;
+}
+
+.line2 {
+    width: 80px;
+    height: 1px;
+    background-color: #f67c92;
+    display: inline-block;
+}
+
+.line3 {
+    width: 60px;
+    height: 1px;
+    background-color: #f67c92;
+    display: inline-block;
+}
+
+.line {
+    line-height: 1px;
+
+}
+
 /* AGORA É A PARTE DO CALENDARIO!!! */
-main {
+/* main {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+} */
 
 .calendario {
     width: 715px;

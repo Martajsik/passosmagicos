@@ -18,7 +18,7 @@
 <section id="about">
 		<div class="cobertura">
 			<div class="about-left-col">
-				<img src="images/offer.png" alt="">
+				<img src="/images/offer.png" alt="">
 
 			</div>
 			<div class="about-right-col">
@@ -114,7 +114,7 @@
 							</div>
 						</div>
 						<a href="#">Esqueceu sua senha?</a>
-						
+
 						<input type="submit" class="btn" value="cadastra">
 					</form>
 				</div>

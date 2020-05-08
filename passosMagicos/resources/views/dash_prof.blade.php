@@ -33,8 +33,40 @@
 
     </header>
     <main>
+        <section id="about">
+        <div class="about-left-col">
+            <img src="/images/contact.png" alt="">
+        </div>
+
+        <div class="about-right-col">
+            <div class="about-text">
+                <h1 id="quemsomos">Ola Professor</h1>
+                <span class="square"></span>
+
+                <p>Seja bem vindo a pagina do professor, aqui voce consegue realizar diversas atividades
+                    como verificar as notas e comentarios de cada materia e tambem acompanhar de perto
+                    todos os trabalhos e atividades que vai acontecer.
+                    Somos um grupo de amigos, que se uniu para transformar a vida de crianças e adolescentes
+                </p><br><br>
+                <div class="line">
+                    <span class="line1"></span><br>
+                    <span class="line2"></span><br>
+                    <span class="line3"></span>
+                </div>
+                <h2>Juntos somos mais fortes
+                </h2>
+                <h3>Frase do ano</h3>
+            </div>
+        </div>
+
+        </section>
         <div class="container">
             <div class="containerBtns">
+                <aside class="conjunto_turmas">
+                    <button class="notas">
+                         <a href="{{route('professor.notas')}}">Notas</a>
+                    </button>
+                </aside>
                 <!-- Inicio caixa de unidades -->
                 <aside class="unidades">
                     <select name="und" id="und">
@@ -44,17 +76,10 @@
                         <option value="Granjinha">Granjinha</option>
                     </select>
                 </aside>
-                <aside class="conjunto_turmas">
-                    <button class="notas">
-                         <a href="{{route('professor.notas')}}">Notas</a>
-                    </button>
 
-
-
-                </aside>
             </div>
             <!-- Inicio calendario -->
-            <section class="calendario">
+            {{-- <section class="calendario">
                 <div class="date">
                     <div class="day">D</div>
                     <div class="day">S</div>
@@ -100,7 +125,7 @@
                     <div class="number">29</div>
                     <div class="number">30</div>
                 </div>
-            </section>
+            </section> --}}
             <!-- FIM DO CALENDARIO -->
 
 

@@ -12,7 +12,7 @@
 		<div class="cobertura">
 			<div class="about-left-col">
 				<img src="/passosMagicos/public/images/offer.png" alt="">
-
+				<!-- ta aqui a imagem senhora -->
 			</div>
 			<div class="about-right-col">
 				<div class="login-content">

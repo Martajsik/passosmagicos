@@ -9,13 +9,120 @@
     <link rel="stylesheet" href="/css/cadastroprof.css">
 </head>
 <body>
-<form name="form" action="{{route('cadastro')}}" method="post" >
+<!-- <form name="form" action="{{route('cadastro')}}" method="post" >
     @csrf
     @method('POST')
     <a class="link" href="/adm/professor/lista">Voltar</a>
-<h2 class="titulo__h2">Cadastro Professores</h2>
+<h2 class="titulo__h2">Cadastro Professores</h2> -->
 
-    <div class="campo">
+<section id="about">
+		<div class="cobertura">
+			<div class="about-left-col">
+				<img src="images/offer.png" alt="">
+
+			</div>
+			<div class="about-right-col">
+				<div class="login-content">
+					<form action="index.html">
+						<h3 class="title">Cadastro</h3>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<input type="text" placeholder="Nome completo" class="input">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<input type="email" placeholder="Email" id="email" name="email"  class="input">
+							</div>
+						</div>
+						<div class="input-div pass">
+							<div class="i">
+								<i class="fas fa-lock"></i>
+							</div>
+							<div class="div">
+								<input type="password" placeholder="Senha" name="password" class="input">
+							</div>
+						</div>
+						<div class="input-div pass">
+							<div class="i">
+								<i class="fas fa-lock"></i>
+							</div>
+							<div class="div">
+								<input type="password" placeholder=" Confirmar Senha" name="password-verify" class="input">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<input type="text" placeholder="CPF" class="input  cpf " name="cpf" id="cpf" autocomplete="off" maxlength="14">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<input type="text" placeholder="RG" class="input rg" name="rg" autocomplete="off">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<input type="text" placeholder="CEP" class="input cep " name="cep" id="cep">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<input type="text" placeholder="logradouro" class="input" name="logradouro" id="logradouro">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<input type="text" placeholder="complemento" class="input" name="complemento" id="complemento">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<input type="text" placeholder="bairro" class="input">
+							</div>
+						</div>
+						<div class="input-div one">
+							<div class="i">
+								<i class="fas fa-user"></i>
+							</div>
+							<div class="div">
+								<input type="text" placeholder="Uf" name="uf" id="uf" class="input">
+							</div>
+						</div>
+						<a href="#">Esqueceu sua senha?</a>
+						
+						<input type="submit" class="btn" value="cadastra">
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!-- <div class="campo">
         <label for="name">Nome Completo:</label>
         <input class="caixa" type="text" name="name" id="nome">
     </div>
@@ -66,7 +173,7 @@
     <div class="campo">
       <label for="uf">UF:</label>
       <input type="text" class="caixa" name="uf" id="uf"  value="">
-    </div>
+    </div> -->
 
 
     <button type="submit" name="envio" class="btn">Cadastrar</button>

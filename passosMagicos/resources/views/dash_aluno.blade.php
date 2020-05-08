@@ -31,14 +31,22 @@
                         <a href="#footer">Notas</a>
                     </li>
                      <li>
-                        <a href="">Sair</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('logout') }}
+                                    </a>
+                        </form>
                     </li>
                 </ul>
             </div>
         </nav>
         <img src="/images/menu.png" id="menuBtn">
 
-    </header>
+</header>
     <section id="about">
         <div class="about-left-col">
             <img src="/images/contact.png" alt="">

@@ -24,6 +24,7 @@
     </div>
 @endif
         <h1>Cadastro</h1>
+        <a class="link" href="/adm/aluno/lista">Voltar</a>
         <input class="senha" type="text" name="tipo" placeholder="tipo">
          <input class="nome" type="text" name="name" placeholder="nome completo">
          <input class="email" type="email" name="email" placeholder="email">

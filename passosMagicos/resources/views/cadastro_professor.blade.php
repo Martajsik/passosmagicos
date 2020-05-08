@@ -12,7 +12,8 @@
 <form name="form" action="{{route('cadastro')}}" method="post" >
     @csrf
     @method('POST')
-<h2>Cadastro Professores</h2>
+    <a class="link" href="/adm/professor/lista">Voltar</a>
+<h2 class="titulo__h2">Cadastro Professores</h2>
 
     <div class="campo">
         <label for="name">Nome Completo:</label>
@@ -68,7 +69,7 @@
     </div>
 
 
-    <button type="submit" name="envio">Cadastrar</button>
+    <button type="submit" name="envio" class="btn">Cadastrar</button>
 </form>
 <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 <script src="/js/viaCep.js"></script>

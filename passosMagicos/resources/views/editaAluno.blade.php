@@ -8,22 +8,35 @@
     <link rel="stylesheet" href="/css/editaAlunos.css">
 </head>
 <body>
-    <header class="header__content">
-    <nav class="nav">
 
-        <div class="nav__infos">
-        <h1 class="nav__infos--title">Editar Aluno {{$usuario->name}}</h1>
-        </div>
+    <header class="topo">
+        <nav>
+            <h1 class="titulo">Editar Aluno</h1>
+            <div id="sideNav">
+                <ul>
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/adm/aluno/lista">Voltar</a>
+                    </li>
+                     <li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('logout') }}
+                                    </a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <img src="/images/menu.png" id="menuBtn">
 
-        <div class="nav__list">
-            <ul class="nav__list--items">
-                <li class="nav__list--item"><a class="nav__list--link" href="/home">Home</a></li>
-                <li class="nav__list--item"><a class="nav__list--link" href="/adm/aluno/lista">Voltar</a></li>
-                <li class="nav__list--item"><a class="nav__list--link" href="/login">Sair</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+    </header>
 
 <main class="primary__content">
      <section class="primary__content--changes">
@@ -67,5 +80,20 @@
 <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 <script src="/js/jquery.mask.js"></script>
 <script src="/js/mascara.js"></script>
+
+<script>
+        var menubtn = document.getElementById("menuBtn");
+        var sideNav = document.getElementById("sideNav");
+
+        sideNav.style.right = "-250px";
+        menuBtn.onclick = function () {
+            if (sideNav.style.right == "-250px") {
+                sideNav.style.right = "0";
+            } else {
+                sideNav.style.right = "-250px";
+            }
+        }
+</script>
+
 </body>
 </html>

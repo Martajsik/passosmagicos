@@ -1,5 +1,6 @@
 body {
-    background-color: #dcdde1;
+    background-color: #FAB3C4;
+    ;
 }
 form {
   position:absolute;
@@ -8,7 +9,24 @@ form {
   padding:12px;
   width: 350px;
   border-radius:10px;
-  background-color:  #8EB6BF;
+  background-color: #FFD7E0;
+}
+.titulo__h2{
+    color:gray;
+}
+
+.link,
+.link:hover
+{
+    text-decoration: none;
+    color: gray;
+    font-size: .8rem;
+}
+
+
+
+label{
+    color:gray;
 }
 form input{
   padding:5px;
@@ -16,15 +34,15 @@ form input{
   border-radius:10px;
   margin: 5px;
   border-style:none;
-  
+
 }
 .caixa{
   width:90%;
 }
-.botao{
-  float:left;
-  margin-left:130px;
-}
-.botao:hover{
-  background-color: green;
+.btn{
+    width: 50%;
+    margin: 2vh 10vh;
+    border-radius: 4px;
+    background-color: #F67C92;
+    color: #ffffff;
 }

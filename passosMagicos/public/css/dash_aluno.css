@@ -18,7 +18,7 @@ header {
     background-image: linear-gradient(to right,#d67086,#ffa1b8 ,#ffd7e0 );
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%; 
+    padding: 20px 10%;
 }
 
 .img{
@@ -26,7 +26,7 @@ header {
     border-radius: 50%;
     cursor: pointer;
     width: 50px;
-    height: 50px; 
+    height: 50px;
 }
 
 
@@ -308,7 +308,7 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1Fr);
     grid-auto-rows: 100px;
-    grid-gap: 16px; 
+    grid-gap: 16px;
     margin: 40px 30px;
 
 }
@@ -353,7 +353,7 @@ body {
             rgba(10, 10, 10, 0) 0%,
             rgba(10, 10, 10, 0) 50%,
             rgba(10, 10, 10, 0.7) 100%), url('../img/portugues.jpeg');
-} 
+}
 
 .card-3 {
     background-image: linear-gradient(to bottom,
@@ -473,7 +473,7 @@ body {
         grid-auto-rows: 100px;
         grid-gap: 25px;
         margin: 40px 0 40px 0;
-    } 
+    }
 
     .descricao {
         display: grid;
@@ -511,7 +511,7 @@ body {
         -ms-grid-column: span 12;
         grid-column-start: span 12;
 
-    } 
+    }
 
     .feed {
         display: grid;
@@ -583,7 +583,7 @@ body {
         -ms-grid-column: span 18;
         grid-column-start: span 18;
 
-    } 
+    }
     .descricao {
         display: grid;
         grid-template-columns: auto;

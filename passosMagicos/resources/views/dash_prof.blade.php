@@ -11,28 +11,30 @@
 <body>
 
     <header class="topo">
-        <div class="logo">
-            <img src="/storage/img/dash_prof2.jpeg" alt="">
-        </div>
-        {{-- {{$professor->nome}} --}}
         <nav>
-            <ul class="nav_links">
-            <span class="saudacao">Seja bem vindo, professor!</span>
-                <li><a href="adm">home</a></li>
-                <li><a href="/professor/professor/edit">atualização de info</a></li>
-                <li><a href="#">sair</a></li>
-            </ul>
+            <h1 class="titulo">Bem vindo, Professor</h1>
+            <div id="sideNav">
+                <ul>
+                     <li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            @method('POST')
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('logout') }}
+                                    </a>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </nav>
+        <img src="/images/menu.png" id="menuBtn">
+
     </header>
     <main>
         <div class="container">
             <div class="containerBtns">
-                <aside class="conjunto_turmas">
-                    <button class="turma">Turma 1</button>
-                    <button class="turma">Turma 2</button>
-                    <button class="turma">Turma 3</button>
-                    <button type="submit" class="notas">Subir notas</button>
-                </aside>
                 <!-- Inicio caixa de unidades -->
                 <aside class="unidades">
                     <select name="und" id="und">
@@ -42,13 +44,17 @@
                         <option value="Granjinha">Granjinha</option>
                     </select>
                 </aside>
+                <aside class="conjunto_turmas">
+                    <button class="notas">
+                         <a href="{{route('professor.notas')}}">Notas</a>
+                    </button>
+
+
+
+                </aside>
             </div>
             <!-- Inicio calendario -->
             <section class="calendario">
-                <div class="imagem">
-                    <h2>Fevereiro de 2020</h2>
-                    <!-- <h3>Segunda-Feira,3</h3> -->
-                </div>
                 <div class="date">
                     <div class="day">D</div>
                     <div class="day">S</div>
@@ -97,9 +103,24 @@
             </section>
             <!-- FIM DO CALENDARIO -->
 
-           
+
         </div>
     </main>
+
+
+     <script>
+        var menubtn = document.getElementById("menuBtn");
+        var sideNav = document.getElementById("sideNav");
+
+        sideNav.style.right = "-250px";
+        menuBtn.onclick = function () {
+            if (sideNav.style.right == "-250px") {
+                sideNav.style.right = "0";
+            } else {
+                sideNav.style.right = "-250px";
+            }
+        }
+    </script>
 </body>
 
 </html>

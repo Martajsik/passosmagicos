@@ -86,92 +86,69 @@ button {
     color: #8395a7;
 }
 
-.content__primary {
+
+.primary__content {
     width: 100vw;
 }
 
-.container {
-    width: 85%;
-    margin-left: 5%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.title {
-    color: grey;
+.primary__content--changes {
+    width: 80vw;
     margin: 0 auto;
+    display: flex;
+    height: auto;
 }
 
-.table {
-    width: 100%;
+.primary__content--form {
+    margin: 0 auto;
+    width: 80vw;
+}
+
+.form {
+    margin-top: 10vh;
+    width: 80vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 2vh;
-}
-
-.table__head {
-    display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
     align-items: center;
-    border-bottom: 1px solid;
-}
-
-.table__head--gap {
-    width: 20%;
 
 }
 
-.table__head--field {
-    width: 100%;
-
-}
-
-.table__body {
-    border-bottom: 1px solid;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-
-
-}
-
-.table__body--gap {
-    width: 20%;
-}
-
-.table__head--gapB {
-    width: 20%;
-}
-
-.table__body--gapC {
-    width: 20%;
-}
-
-.btn {
-    background-color: #FFCCD8;
-    border-radius: 6px;
-    padding: 5%;
-}
-
-.btn a,
-.exc {
-    color: grey;
-    cursor: pointer;
-
-}
-
-.botoes {
-    margin-top: 2vh;
-}
-
-.btnC {
-    background-color: #FFCCD8;
-    border-radius: 6px;
-    padding: 10px;
-}
-
-.btnC a {
+.form__label {
+    width: 60%;
+    font-size: 1.15rem;
+    font-weight: bold;
     color: gray;
+
+
+}
+
+.form__space {
+    width: 60%;
+    padding: 0.8vh;
+    margin: 1.5vh 0;
+    background-color: #e5e5e5;
+    border-bottom: 1px solid #7d8597;
+    border-right: 1px solid #7d8597;
+}
+
+/* .form__space:last-of-type{
+    background-color: white;
+    border:none;
+} */
+
+.form__button--submit {
+    width: 60%;
+    color: gray;
+    background-color: #FFCCD8;
+    ;
+    margin: 1.5% 0;
+    padding: 0.7%;
+    border-radius: 1vh;
+    font-size: 1.4rem;
+}
+
+.form__button--submit:hover {
+    transition: 1s;
+    background-color: #F67C92;
+    color: #fff;
 }

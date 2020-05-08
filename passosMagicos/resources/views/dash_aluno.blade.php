@@ -79,29 +79,25 @@
         <div class="feed">
             <div class="feed--card--container">
                 <div class="card-1">
-                    <img src="" alt="">
+                   
                 </div>
             </div>
             <div class="feed--card--container">
                 <div class="card-2">
                  <h2>cometarios</h2>
-                 <p>o seu trabalho estava execelente e foi muito bem montado
-                     peercebi bastante o seu esforço
-                 </p>
+                
                 </div>
             </div>
             <div class="feed--card--container">
                 <div class="card-1">
-                  <img alt="" class="img card">
+            
                 </div>
             </div>
             <div class="feed--card--container">
                 <div class="card-2">
                   <h2>comentarios</h2>
                   <br>
-                  <p>percebi uma grande evolução no seu aprendizado
-                      e fico muito feliz em ver sua dedicação
-                  </p>
+               
                 </div>
             </div>
         </div>

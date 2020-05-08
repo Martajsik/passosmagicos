@@ -159,13 +159,12 @@ button {
 }
 
 .card-1 {
-   background-color: #f5f6fa;
+    background-color: #f67c92;
 }
 
-.img-card{
-    background-image: url(https://images.pexels.com/photos/265076/pexels-photo-265076.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+h3{
+    color: gray;
 }
-
 
 .about-left-col{
     flex-basis: 50%;

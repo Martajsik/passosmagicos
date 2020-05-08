@@ -29,12 +29,6 @@
     width: 40vw;
 }
 
-/* .nav__infos--foto {
-    max-width: 20vw;
-    border-radius: 50%;
-    margin-right: 5%;
-} */
-
 .nav__infos--title {
     font-size: 1.5em;
     color: #fff;
@@ -110,11 +104,6 @@
     border-bottom: 1px solid #7d8597;
     border-right: 1px solid #7d8597;
 }
-
-/* .form__space:last-of-type{
-    background-color: white;
-    border:none;
-} */
 
 .form__button--submit {
     width: 60%;

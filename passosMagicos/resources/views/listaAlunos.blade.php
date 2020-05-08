@@ -18,8 +18,20 @@
             <ul>
                 <li><a href="/home">Home</a></li>
                 <li><a href="/adm/home">Voltar</a></li>
-                <li><a href="/login">Sair</a></li>
             </ul>
+            <div class="logout">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    @method('POST')
+                    <button>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('logout') }}
+                        </a>
+                    </button>
+                </form>
+            </div>
         </div>
     </nav>
 </header>
@@ -68,13 +80,9 @@
                     <tr>
                         <td>{{$user['cpf']}}</td>
                     </tr>
-
                     <tr>
                         <td>{{$user['rg']}}</td>
                     </tr>
-                    {{-- @if($user['tipo']==2) --}}
-
-
                     <tr>
                         <td>{{$aluno['nome_pais']}}</td>
                     </tr>
@@ -82,33 +90,20 @@
                     <tr>
                         <td>{{$aluno['contato']}}</td>
                     </tr>
-
-
-
-                     <form action="{{ route('excluirAluno',$aluno->id) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
+                    <form action="{{ route('excluirAluno',$aluno->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <tr>
+                            <td>
+                                <button type="submit">Excluir</button>
+                            </td>
+                        </tr>
+                    </form>
                     <tr>
                         <td>
-                            <button type="submit">Excluir</button>
-                        </td>
-                    </tr>
-                </form>
-                    {{-- <form action="{{ route( 'editaAluno' , $aluno->id) }}" method="post">
-                    @csrf
-                    <tr>
-                        <td>
-                            <button type="submit">Editar</button>
-                        </td>
-                    </tr>
-
-                </form> --}}
-
-                    <tr>
-                        <td>
-                             <button >
-                            <a href="{{route('editaAluno',$aluno->id)}}">EDITAR</a>
-                        </button>
+                            <button >
+                                <a href="{{route('editaAluno',$aluno->id)}}">EDITAR</a>
+                            </button>
                         </td>
                     </tr>
                     @endif
@@ -116,11 +111,11 @@
                     @endforeach
                 </tbody>
             </table>
+
             <div class="botoes">
-
+                <button>
                    <a href="{{route('cadastro.aluno')}}" value="" class="botao__cadastro"> Cadastrar Aluno</a>
-
-
+                </button>
             </div>
         </div>
 

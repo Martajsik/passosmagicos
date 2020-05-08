@@ -18,10 +18,6 @@
         <label for="name">Nome Completo:</label>
         <input class="caixa" type="text" name="name" id="nome">
     </div>
-    <div class="campo">
-        <label for="materia">Materia:</label>
-        <input class="caixa" type="text" name="materia" id="materia">
-    </div>
     <div class="email">
         <label for="email">E-mail:</label>
             <input class="caixa" type="text" id="email" name="email"  value="" placeholder=>

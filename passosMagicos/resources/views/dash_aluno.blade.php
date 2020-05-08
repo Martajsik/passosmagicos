@@ -12,8 +12,8 @@
 <body>
 
 <header class="topo">
-        <img class="img" src="images/perfil.jpeg">
-        
+        <img class="img" src="/images/perfil.jpeg">
+
         <nav>
             <h1 class="titulo">Kamy santos</h1>
             <div id="sideNav">
@@ -32,18 +32,18 @@
                     </li>
                      <li>
                         <a href="">Sair</a>
-                    </li> 
+                    </li>
                 </ul>
             </div>
         </nav>
-        <img src="images/menu.png" id="menuBtn">
+        <img src="/images/menu.png" id="menuBtn">
 
     </header>
     <section id="about">
         <div class="about-left-col">
-            <img src="images/contact.png" alt="">
-        </div> 
-        
+            <img src="/images/contact.png" alt="">
+        </div>
+
         <div class="about-right-col">
             <div class="about-text">
                 <h1 id="quemsomos">Ola aluno</h1>
@@ -77,7 +77,7 @@
             <div class="feed--card--container">
                 <div class="card-2">
                  <h2>cometarios</h2>
-                 <p>o seu trabalho estava execelente e foi muito bem montado 
+                 <p>o seu trabalho estava execelente e foi muito bem montado
                      peercebi bastante o seu esforço
                  </p>
                 </div>

@@ -18,9 +18,6 @@
             <li class="content__list--item">
                 <a class="content__list--link" href="/home">Home</a>
             </li>
-            <li class="content__list--item">
-                <a class="content__list--link" href="/login">Sair</a>
-            </li>
        </ul>
         <form id="logout-form" action="{{ route('logout') }}" method="POST">
             @csrf

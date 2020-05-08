@@ -12,7 +12,7 @@
 <section id="about">
 		<div class="cobertura">
 			<div class="about-left-col">
-				<img src="/passosMagicos/public/images/offer.png" alt="">
+				<img src="/images/offer.png" alt="">
 				<!-- ta aqui a imagem senhora -->
 			</div>
 			<div class="about-right-col">
@@ -51,12 +51,12 @@
                         {{-- @if (Route::has('password.request'))
 						<a href="{{ route('password.request') }}">Esqueceu sua senha?</a>
                         <input type="submit" class="btn" value="Entra"> --}}
-                         <input type="submit" class="btn" value="Entrar">
                         @if (Route::has('password.request'))
-                            <a class="btn " href="{{ route('password.request') }}">
-                                {{ __('Esqueceu sua senha?') }}
-                            </a>
+                        <a class=" " href="{{ route('password.request') }}">
+                            {{ __('Esqueceu sua senha?') }}
+                        </a>
                         @endif
+                        <input type="submit" class="btn" value="Entrar">
 					</form>
 				</div>
 			</div>

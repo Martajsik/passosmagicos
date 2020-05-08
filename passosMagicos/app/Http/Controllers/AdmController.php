@@ -41,20 +41,21 @@ class AdmController extends Controller
 
     public function editaProfessor($id)
     {
-        return view('editProfessor');
+        $editar = User::find($id);
+
+        return view('editProfessor',['editar'=>$editar]);
     }
 
     public function editarProfessor(Request $request, $id)
     {
         //editar um professor especifico
+        $lista_total = User::all();
         $editar = User::find($id);
-
         $editar->fill($request->all());
-
         $editar->save();
 
-        // return view('editProfessor');
-        return view('editProfessor', ['editar' => $editar]);
+        return redirect('adm/professor/lista');
+
     }
 
     public function excluirProfessor($id)
@@ -96,7 +97,7 @@ class AdmController extends Controller
     {
         $lista_alunos = Aluno::all();
         $lista_users = User::all();
-        return view('listaAlunos', ['lista_alunos' => $lista_alunos,'lista_users' => $lista_users]);
+        return view('listaAlunos', ['lista_alunos' => $lista_alunos, 'lista_users' => $lista_users]);
     }
 
     public function listaAluno($id)
@@ -109,7 +110,10 @@ class AdmController extends Controller
 
     public function editaAluno($id)
     {
-        return view('adm.aluno.edita');
+        $editara = Aluno::find($id);
+        $editaraUserId = $editara['user_id'];
+        $usuario = User::find($editaraUserId);
+        return view('editaAluno',['editara'=>$editara,'usuario'=>$usuario]);
     }
 
     public function editarAluno(Request $request, $id)
@@ -122,23 +126,15 @@ class AdmController extends Controller
         $usuario->fill($request->all());
         $usuario->save();
         $editara->save();
+        return redirect('/adm/aluno/lista');
 
-
-        return view('editaAluno', [
-            'editara' => $editara, 'usuario' => $usuario
-        ]);
-        //editar um aluno especifico
-        // }
     }
 
     public function excluirAluno($id)
     {
-
         $excluira = Aluno::findOrFail($id);
         $excluira->delete();
         return redirect('/adm/aluno/lista');
 
-        //return view('editaAluno');
-        //excluir do banco de dados
     }
 }

@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/editProfessor.css">
-<title>Editar Professor {{ $editar['name'] }} </title>
+<title>Editar Professor </title>
 </head>
 <body>
 
 <header class="header__content">
     <nav class="nav">
+
 
         <div class="nav__infos">
             <h1 class="nav__infos--title">Editar professor {{ $editar['name'] }} </h1>
@@ -28,16 +29,21 @@
 
 <main class="primary__content">
      <section class="primary__content--changes">
-         <form class="form" action="" method="post" >
+         <form class="form" action="" method="post"  id="editFormProf">
              @csrf
 
+             <div id="mensagem">
+
+             </div>
                  <label class ="form__label" for="name">Nome Completo:</label>
 
          <input class="form__space" type="text" name="name" id="name" value="{{$editar->name}}">
 
+
                  <label class ="form__label" for="email">E-mail:</label>
 
                  <input class="form__space" type="email" name="email" id="email" value="{{$editar->email}}">
+
 
                  <label class ="form__label" for="email-verify">Confirmar e-mail:</label>
 
@@ -47,11 +53,13 @@
 
                  <input class="form__space cpf" type="text" name="cpf" id="cpf" value="{{$editar->cpf}}">
 
+
                  <label class ="form__label rg" for="rg">RG:</label>
 
                  <input class="form__space rg" type="text" name="rg" id="rg" value="{{$editar->rg}}">
 
-                 <button class="form__button--submit" type="submit" name="editar">Editar</button>
+
+                 <button class="form__button--submit" type="submit" name="editar" id="editar">Editar</button>
              </form>
      </section>
 
@@ -59,6 +67,8 @@
 <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
 <script src="/js/jquery.mask.js"></script>
 <script src="/js/mascara.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="/js/editProf.js"></script> --}}
 
 </body>
 </html>

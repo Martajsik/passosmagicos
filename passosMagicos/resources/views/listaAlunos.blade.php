@@ -83,7 +83,7 @@
                         <td>{{$aluno['contato']}}</td>
                     </tr>
 
-                    {{-- @endif --}}
+
 
                      <form action="{{ route('excluirAluno',$aluno->id) }}" method="POST">
                     @csrf
@@ -94,7 +94,7 @@
                         </td>
                     </tr>
                 </form>
-                    <form action="{{ route( 'editaAluno' , $aluno->id) }}" method="post">
+                    {{-- <form action="{{ route( 'editaAluno' , $aluno->id) }}" method="post">
                     @csrf
                     <tr>
                         <td>
@@ -102,7 +102,15 @@
                         </td>
                     </tr>
 
-                </form>
+                </form> --}}
+
+                    <tr>
+                        <td>
+                             <button >
+                            <a href="{{route('editaAluno',$aluno->id)}}">EDITAR</a>
+                        </button>
+                        </td>
+                    </tr>
                     @endif
                     @endforeach
                     @endforeach

@@ -71,7 +71,7 @@
                         </td>
                     </tr>
                 </form>
-                     <form action="{{ route('edita',$professor->id) }}" method="post">
+                     {{-- <form action="{{ route('edita',$professor->id) }}" method="post">
                     @csrf
                     <tr>
                         <td>
@@ -79,7 +79,12 @@
                         </td>
                     </tr>
 
-                </form>
+                </form> --}}
+                        <td>
+                        <button >
+                            <a href="{{route('edita',$professor->id)}}">EDITAR</a>
+                        </button>
+                        </td>
                     @endif
                 @endforeach
                 </tbody>

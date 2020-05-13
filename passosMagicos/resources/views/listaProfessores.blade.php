@@ -99,7 +99,7 @@
             </table>
             <div class="botoes">
                 <button class="btnC">
-                <a href="{{route('cadastro.aluno')}}" value="" class="botao__cadastro"> Cadastrar Aluno</a>
+                <a href="{{route('cadastro')}}" value="" class="botao__cadastro"> Cadastrar Professor</a>
                 </button>
             </div>
             </div>

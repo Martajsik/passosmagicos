@@ -114,7 +114,7 @@
 						</div>
 						<a href="#">Esqueceu sua senha?</a>
 
-						<input type="submit" class="btn" value="cadastra">
+						<input type="submit" class="btn" value="cadastra" placeholder="cadastrar">
 					</form>
 				</div>
 			</div>
